@@ -909,140 +909,129 @@ for (let i = 0; i < sections.length; i++) {
 
 
 
+}
+
+const GET_CARD_IMG = async(card) => {
+    const query = "yugioh_duel_links_" + card;
+    const url = `https://www.bing.com/images/search?q=${query}&qs=n&form=QBIR&sp=-1&lq=0&pq=${query}&sc=10-6&cvid=4DFAC9330B0E41E8B743AE0F0A1EE6BB&ghsh=0&ghacc=0&first=1`;
+
+    const res = (await (axios.get(url))).data
+
+
+    try {
+        fs.mkdirSync("./Cards")
+    } catch (error) {
+
+    }
+
+    try {
+        fs.mkdirSync("./Cards/" + card + "/")
+    } catch (error) {
+
+    }
+
+
+    // mimg
+    const text = search(res, '<div id="vm_c">', 'id="fbdialog_title"');
+    const dom = stringTOhtml(text).window.document;
+    let content = dom.querySelectorAll("ul");
+    const final = [];
+    for (let i = 1; i < content.length; i++) {
+        try {
+            const links = content[i].querySelectorAll("li");
+            for (let j = 0; j < 3; j++) {
+                if (links[j] != undefined) {
+                    final.push(links[j])
+                }
+            }
+        } catch (error) {
+
+        }
+
+    }
+
+
+
+
+    const fs = require('fs');
+    const path = require('path');
+
+    async function downloadImage(url, outputPath) {
+        try {
+            const response = await axios.get(url, { responseType: 'arraybuffer' });
+
+            // Escribe la imagen en el archivo
+            fs.writeFileSync(outputPath, response.data);
+            console.log('Imagen descargada y guardada en', outputPath);
+        } catch (error) {
+            console.error('Error al descargar o guardar la imagen:', error);
+        }
+    }
+
+
+    const urls = [];
+    for (let i = 0; i < final.length; i++) {
+        try {
+            const img = final[i].getElementsByClassName("mimg");
+
+            if (img.length != 0) {
+
+                let url = img[0].src;
+                let toDelete = [search(url, 'w=', "&c")[1], search(url, 'w=', "&c")[2] + 1];
+                toDelete = url.substring(toDelete[0], toDelete[1]);
+                url = url.replace(toDelete, "");
+                urls.push(url)
+
+
+                // const output = `./Cards/${card}/` + card + "_" + i + ".png";
+                // await downloadImage(url, output);
+
+            }
+
+            // `?w=`&c=
+
+        } catch (error) {
+
+        }
+
+    }
+
+
+    return urls
+        // content = content.querySelectorAll("td")[1]
+
+    // content = content.getElementsByClassName("itm")
+
+    // let img = content[0].querySelector("img").getAttribute("src2").replace("&w=42&h=42", "");
+
+    // console.log(img);
+
+
+
+
 
 }
 
 
-// const getCards = async(pack) => {
-//     const BASE = "https://www.konami.com/yugioh/duel_links/en/box/";
-//     const resp = (await axios.get(BASE + pack.href)).data;
-
-
-// }
-// https://www.konami.com/yugioh/duel_links/images/card.php?V3hTSU0wQStBUXFnRGhYckpQNVVQQT09
-
-// https://www.konami.com/yugioh/duel_links/yugioh/duel_links/images/card.php?V3hTSU0wQStBUXFnRGhYckpQNVVQQT09
-
-
-
-
-
-
-// axios.get("https://www.konami.com/yugioh/duel_links/images/V3hTSU0wQStBUXFnRGhYckpQNVVQQT09").then(r => console.log(r.status))
-
-
-// https://www.konami.com/yugioh/duel_links/en/box/borrelswordslash/card_view/card.php?V3hTSU0wQStBUXFnRGhYckpQNVVQQT09
-
-
-// https://www.konami.com/yugioh/card_view/duel_links/images/V3hTSU0wQStBUXFnRGhYckpQNVVQQT09
-
-
-// axios.get("https://www.google.com/search?sca_esv=9267af3241730e66&sxsrf=ADLYWIJgVjTKQleCcWRXX-rpInxmuz7HyQ:1722620256953&q=dragon&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhd3zC4y7ZXTSrvvSBSNjw8fVX3G3tS3bGsqQeBBxb6Hy8eIuagYXWKVWI6_Sw2dhxH6_A2u8dTR_ejg-lVOsSwqt71JELMJ1CwJzu70wamqRqMHkEh8fWNz6pQtKEoOgIgNjlmetAPrKSjDygeBLXxzdavrfiE8eSfmTZlzi3i5aCfgbo0Q&sa=X&ved=2ahUKEwjJm_7D7NaHAxXKqpUCHSE_D2EQtKgLegQIGRAB&biw=1522&bih=707&dpr=1")
-//     .then(r => {
-//         log(r.data)
-//     })
-
 const gHtml = (html) => {
-        return html.outerHTML
-    }
-    (async() => {
-        const card = 'Sunvine_Gardna';
-        const query = "yugioh_duel_links_" + card;
-        const url = `https://www.bing.com/images/search?q=${query}&qs=n&form=QBIR&sp=-1&lq=0&pq=${query}&sc=10-6&cvid=4DFAC9330B0E41E8B743AE0F0A1EE6BB&ghsh=0&ghacc=0&first=1`;
+    return html.outerHTML
+}
 
-        const res = (await (axios.get(url))).data
-
-
-        try {
-            fs.mkdirSync("./Cards")
-        } catch (error) {
-
-        }
-
-        try {
-            fs.mkdirSync("./Cards/" + card + "/")
-        } catch (error) {
-
-        }
+const getCards = async(pack) => {
+    const BASE = "https://www.konami.com/yugioh/duel_links/en/box/";
+    let resp = (await axios.get(BASE + pack.href)).data;
+    resp = search(resp, '<section id="card-list"');
+    resp = search(resp[0], undefined, '</section>');
 
 
-        // mimg
-        const text = search(res, '<div id="vm_c">', 'id="fbdialog_title"');
-        const dom = stringTOhtml(text).window.document;
-        let content = dom.querySelectorAll("ul");
-        const final = [];
-        for (let i = 1; i < content.length; i++) {
-            try {
-                const links = content[i].querySelectorAll("li");
-                for (let j = 0; j < 3; j++) {
-                    if (links[j] != undefined) {
-                        final.push(links[j])
-                    }
-                }
-            } catch (error) {
 
-            }
-
-        }
+    const dom = stringTOhtml(resp).window.document;
+    let content = dom.querySelectorAll("li");
+    const card_name = content[0].querySelector("dt").textContent;
+    const card_rarity = Array.from(content[0].querySelector("a").classList).filter(cl => cl.includes("rare"))[0].replace("rare-", "").toUpperCase();
+    const card_imgs = await GET_CARD_IMG(card_name);
 
 
 
 
-        const fs = require('fs');
-        const path = require('path');
-
-        async function downloadImage(url, outputPath) {
-            try {
-                const response = await axios.get(url, { responseType: 'arraybuffer' });
-
-                // Escribe la imagen en el archivo
-                fs.writeFileSync(outputPath, response.data);
-                console.log('Imagen descargada y guardada en', outputPath);
-            } catch (error) {
-                console.error('Error al descargar o guardar la imagen:', error);
-            }
-        }
-
-
-
-        for (let i = 0; i < final.length; i++) {
-            try {
-                const img = final[i].getElementsByClassName("mimg");
-
-                if (img.length != 0) {
-
-                    let url = img[0].src;
-                    let toDelete = [search(url, 'w=', "&c")[1], search(url, 'w=', "&c")[2] + 1];
-                    toDelete = url.substring(toDelete[0], toDelete[1]);
-                    url = url.replace(toDelete, "");
-
-
-
-                    const output = `./Cards/${card}/` + card + "_" + i + ".png";
-                    await downloadImage(url, output);
-
-                }
-
-                // `?w=`&c=
-
-            } catch (error) {
-
-            }
-
-        }
-
-
-
-        // content = content.querySelectorAll("td")[1]
-
-        // content = content.getElementsByClassName("itm")
-
-        // let img = content[0].querySelector("img").getAttribute("src2").replace("&w=42&h=42", "");
-
-        // console.log(img);
-
-
-
-
-
-    })()
+}
