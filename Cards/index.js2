@@ -1,0 +1,1391 @@
+const GETTER = 'http://duellinks.gamea.co/c/a65hehwe';
+const axios = require("axios");
+const { log } = require("console");
+const { JSDOM } = require('jsdom');
+
+
+// https://www.konami.com/yugioh/duel_links/en/box/
+
+
+
+const CASE1 = (str) => {
+    const dom = new JSDOM(str);
+
+    const document = dom.window.document;
+
+
+    const a = ((document.querySelector("table")).querySelector("td")).querySelector("a");
+    const img = a.querySelector("img");
+
+    const proto_A = getProdoData(a);
+    const proto_IMG = getProdoData(img);
+
+
+    return {
+        img: proto_IMG.src,
+        name: proto_IMG.alt,
+        url: proto_A.href
+    }
+}
+
+
+
+
+
+
+const EXCUTE_CASE1 = (toAnalizate) => {
+    const data = [];
+
+    toAnalizate = (toAnalizate.slice(toAnalizate.indexOf('<td>')))
+
+
+
+
+
+
+
+    for (let i = 0; i < 3; i++) {
+        const start = toAnalizate.indexOf('<td>');
+        const end = toAnalizate.indexOf('</td>') + '</td>'.length;
+
+
+
+        const html = `<table>${toAnalizate.slice(start, end)}</table>`;
+
+        data.push(CASE1(html))
+
+        toAnalizate = toAnalizate.slice(end)
+
+    }
+
+
+    let br = 0;
+    do {
+        br++
+        const start = toAnalizate.indexOf('<td>');
+        const end = toAnalizate.indexOf('</td>') + '</td>'.length;
+
+
+        if (start == -1 || end == -1) {
+            break
+        }
+
+        const html = `<table>${toAnalizate.slice(start, end)}</table>`;
+
+        data.push(CASE1(html))
+        toAnalizate = toAnalizate.slice(end)
+
+
+
+
+    } while (br < 100000);
+
+
+
+}
+
+
+
+const raw = `
+
+
+
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <th colspan="5">Structure decks</th>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/w870fed6"><img
+                                    src="/file/imgbank/umi92hxs/fism66d6/9c640417fe91fae67f1d9447df0e4ceacfb59e06_s.jpg"
+                                    width="50" alt="Sorcerers Alliance"></a></td>
+                        <td><a href="/c/rf1qmp4y"><img
+                                    src="/file/imgbank/umi92hxs/u7ut86sm/d2a69c14faf132ae34bfa85d9d9b08bf889b2ae0_s.jpg"
+                                    width="50" alt="Dragonic Force"></a></td>
+                        <td><a href="/c/9bicnsvs"><img
+                                    src="/file/imgbank/umi92hxs/3wpi03g5/6a15ee571449d138ae269820683fc233bf51c91d_s.jpg"
+                                    width="50" alt="Hero Rising"></a></td>
+                        <td><a href="/c/w124mq1x"><img
+                                    src="/file/imgbank/umi92hxs/spk7v7cg/e6f44c51b8f3bd2e737d461e29443855d2c235d8_s.jpg"
+                                    width="50" alt="Legendary Warriors"></a></td>
+                        <td><a href="/c/se9956wv"><img
+                                    src="/file/imgbank/umi92hxs/50ob8za8/bc4a986f010701bee22359db627741ea3c783863_s.jpg"
+                                    width="50" alt="Destiny Rulers"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/u5y19rvm"><img
+                                    src="/file/imgbank/umi92hxs/qsop3121/df957c18f783d5206fb2479d7709da0f8aaf1983_s.jpg"
+                                    width="50" alt="Dragonic Knights"></a></td>
+                        <td><a href="/c/ntzsy3gj"><img
+                                    src="/file/imgbank/umi92hxs/on7r7zz6/a5012da1371db20b9b227e8b25c50622a9d47d7f_s.jpg"
+                                    width="50" alt="Spellbound Silence"></a></td>
+                        <td><a href="/c/nst33tl8"><img
+                                    src="/file/imgbank/umi92hxs/9g3gvg4e/98af1804c8c860f7f9405692b3ad7fb9c2912f3a_s.jpg"
+                                    width="50" alt="Synchro Connection"></a></td>
+                        <td><a href="/c/qih6bn1o"><img
+                                    src="/file/imgbank/umi92hxs/lj8vrb6u/35f860d4d88bcfb7151b4f7dd7645823b2bf71c2_s.jpg"
+                                    width="50" alt="The White Dragon of Legend"></a></td>
+                        <td><a href="/c/30hvqnwi"><img
+                                    src="/file/imgbank/umi92hxs/i5b505cw/6c5fe33a40a0e7b0c6317380da7730dca9809aa8_s.jpg"
+                                    width="50" alt="Swordbound Silence"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/dhpk39vq"><img
+                                    src="/file/imgbank/umi92hxs/8qd8a8n0/fd959d8f1a7aefdf0c8ca0418f26925b6f052253_s.jpg"
+                                    width="50" alt="Ancient Gear Awakening"></a></td>
+                        <td><a href="/c/y25nkymn"><img
+                                    src="/file/imgbank/umi92hxs/otqoyw0n/fe912b2727e671e35263b3548ea6888cd725f2f0_s.jpg"
+                                    width="50" alt="Neos Fusion"></a></td>
+                        <td><a href="/c/gw8q5v2f"><img
+                                    src="/file/imgbank/umi92hxs/46aa7gol/051564bd90e3da33dc85b00c5f9bb705dc4531ce_s.jpg"
+                                    width="50" alt="Return of the Red-Eyes"></a></td>
+                        <td><a href="/c/1pjjwvla"><img
+                                    src="/file/imgbank/umi92hxs/zvc3pzi5/79af3efc4fbcea585c6f42198eb0a5b3d7e12e3f_s.jpg"
+                                    width="50" alt="Full Metal Desperado"></a></td>
+                        <td><a href="/c/zcjfrtf6"><img
+                                    src="/file/imgbank/umi92hxs/ugi2zwkf/116616449cca092aca80af7da39940c6e909402d_s.jpg"
+                                    width="50" alt="Master of Chaos"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/e3hzakkb"><img
+                                    src="/file/imgbank/umi92hxs/8tjw52q5/fbce03df131aa2133a625c8291b43f72fadb7e42_s.jpg"
+                                    width="50" alt="Kings Resonance"></a></td>
+                        <td><a href="/c/f2wwb6hl"><img
+                                    src="/file/imgbank/umi92hxs/ys7i5o32/2a97d9b8070bb4b16e4f991be0cf0ef5ead57fa0_s.jpg"
+                                    width="50" alt="Dragunity Overdrive"></a></td>
+                        <td><a href="/c/y45y561r"><img
+                                    src="/file/imgbank/umi92hxs/af9v8wqz/5e516ae6176190efcac2bdf94991bb1b26efb751_s.jpg"
+                                    width="50" alt="Gladiators Storm"></a></td>
+                        <td><a href="/c/9p5lz68l"><img
+                                    src="/file/imgbank/umi92hxs/hwv5cey7/4703146d175bebc5d82784c0a889215eab5d35ca_s.jpg"
+                                    width="50" alt="HERO Generation"></a></td>
+                        <td><a href="/c/ys8mjv2z"><img
+                                    src="/file/imgbank/umi92hxs/fb12zkug/6e3de9caf3138f52743e793ab0059d631bda7e61_s.jpg"
+                                    width="50" alt="Return of the Fire Kings"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/e8h76oxl"><img
+                                    src="/file/imgbank/umi92hxs/j98x7ehh/025a54cfcbbd2e4cdf0ccd3f27d8088dbeebb9f7_s.jpg"
+                                    width="50" alt="Gagaga Xyz"></a></td>
+                        <td><a href="/c/nxnb094m"><img
+                                    src="/file/imgbank/umi92hxs/p07jsfes/c7e41ab0a3f88dff9da641c7d37f35bee9628422_s.jpg"
+                                    width="50" alt="Tales of the Noble Knights"></a></td>
+                        <td><a href="/c/wtsja9fm"><img
+                                    src="/file/imgbank/umi92hxs/5btqueuc/171052ed94b28ca17dc0fbae5c67b4b6d2944fb8_s.jpg"
+                                    width="50" alt="Blue-Eyes Evolution"></a></td>
+                        <td><a href="/c/0epjjpt6"><img
+                                    src="/file/imgbank/umi92hxs/74gddlp5/9d3c8940f4ac80aef89961258e847ec1201f3eb9_s.jpg"
+                                    width="50" alt="Stardust Nexus"></a></td>
+                        <td><a href="/c/z21vqxdc"><img
+                                    src="/file/imgbank/umi92hxs/p02rxbx9/1fbdb553288ccd9115e42e367cffff1228d9739c_s.jpg"
+                                    width="50" alt="Rise of Gaia"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/2rja98dt"><img
+                                    src="/file/imgbank/umi92hxs/wiizuidm/f7bd46b67f10855fb229735a385a4ebbcb6be547_s.jpg"
+                                    width="50" alt="Evil Domination"></a></td>
+                        <td><a href="/c/fjah9k3n"><img
+                                    src="/file/imgbank/umi92hxs/88o61glg/3d10d93ed390a1083a3053dac5a4f41b74cb65e3_s.jpg"
+                                    width="50" alt="Magicians Arc"></a></td>
+                        <td><a href="/c/a7yku2nn"><img
+                                    src="/file/imgbank/umi92hxs/546d6i5m/24b29ee2a71c8d2af7818c723c63fc5e27839050_s.jpg"
+                                    width="50" alt="D/D/D Apocalypse"></a></td>
+                        <td><a href="/c/7dwiw1qz"><img
+                                    src="/file/imgbank/umi92hxs/3j81ejv5/c465f6727426e435502647b8fc57a8559521d55f_s.jpg"
+                                    width="50" alt="Cyber Style Extreme"></a></td>
+                        <td><a href="/c/8b6dbv3p"><img
+                                    src="/file/imgbank/umi92hxs/rir8mm8i/243edd9413057e0127fa1c3d0095442482c5b22c_s.jpg"
+                                    width="50" alt="Sword of Paladin"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/1lk4azgg"><img
+                                    src="/file/imgbank/umi92hxs/8eshhssw/4881c553b76ae0d73591f42209e06f2b64a6caee_s.jpg"
+                                    width="50" alt="Tellarknight Advent"></a></td>
+                        <td><a href="/c/fa9jsoe9"><img
+                                    src="/file/imgbank/umi92hxs/7pawqr89/dc309c7a83f129ce937972a7e521285d7b8725f4_s.jpg"
+                                    width="50" alt="Brave Hope"></a></td>
+                        <td><a href="/c/pcvzip1z"><img
+                                    src="/file/imgbank/umi92hxs/vqbgn6vn/00dad943d35d9eeba780faddbbb63fd0dc809044_s.jpg"
+                                    width="50" alt="Ruddy Rose Burning"></a></td>
+                        <td><a href="/c/4zcnntsn"><img
+                                    src="/file/imgbank/umi92hxs/7ka9zs05/08fcfa74984650249e05a1f8563c4edc2f96450b_s.jpg"
+                                    width="50" alt="Cyberse Code"></a></td>
+                        <td><a href="/c/6gmm5l2h"><img
+                                    src="/file/imgbank/umi92hxs/n6s7k3g0/366b0e6579ae09f34e0bc026b4821fc8c6936c40_s.jpg"
+                                    width="50" alt="Thousand Illusion"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/g3gp503h"><img
+                                    src="/file/imgbank/umi92hxs/9d5bwuts/781b8723330c5dc00d62fae3217dfe62779d3452_s.jpg"
+                                    width="50" alt="Imperial Joker"></a></td>
+                        <td><a href="/c/a65hehwe"><img
+                                    src="/file/imgbank/umi92hxs/c0zm9rqz/9a350f2bace752fb8c520f8b5c659422cb89e8a4_s.jpg"
+                                    width="50" alt="Secret of Magicians"></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        <div class="article-part">
+        <h3 class="at-title-b" id="cp877771">Vrains Characters</h3>
+    </div>
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="textcenter font5"><a href="/c/6f8htvpy"><img
+                                        src="/file/imgbank/umi92hxs/4qy0myfx/200040952de65d63baf26a87f7afd9bab79eb0c6_l.jpg"
+                                        alt="Playmaker &amp; AI" width="150"><br>Playmaker &amp; AI</a></div>
+                        </td>
+                        <td><a href="/c/rn2lpcu5"><img
+                                    src="/file/imgbank/umi92hxs/v8bu20iz/816a16c03afb2c08673cea48c773d2bfc3d8031a_l.jpg"
+                                    alt="Varis" width="150"><br>Varis</a></td>
+                        <td>
+                            <div class="textcenter font5"><a href="/c/zwzvfw6a"><img
+                                        src="/file/imgbank/umi92hxs/mmaovxst/44a6784514879329a7151488df0e65098989390c_l.jpg"
+                                        alt="Soulburner" width="150"><br>Soulburner</a></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="textcenter font5"><a href="/c/4m4vmuw9"><img
+                                        src="/file/imgbank/umi92hxs/xmedwvfc/8701f9cf199a27b37bb9b56993d1499833efe98d_l.jpg"
+                                        alt="The Gore" width="150"><br>The Gore</a></div>
+                        </td>
+                        <td><a href="/c/xrjpajhs"><img
+                                    src="/file/imgbank/umi92hxs/10t6nqao/ae2e8d053ed6edb4dce0e00a05a03b712fd3d33b_l.jpg"
+                                    alt="Blue Angel" width="150"><br>Blue Angel</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        <div class="article-part">
+        <h3 class="at-title-b" id="cp803542"> Arc V Characters</h3>
+    </div>
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td><a href="/c/b0ejej2y"><img
+                                    src="/file/imgbank/umi92hxs/e3wxeias/e19b3405c4e1f5ae80634b21a417a9b6bbdf4ca9_l.jpg"
+                                    alt="Yuya Sakaki" width="150"><br>Yuya Sakaki</a></td>
+                        <td><a href="/c/3xrkmx6m"><img
+                                    src="/file/imgbank/umi92hxs/92u76vz7/a51d25337f9e6252a26ca69cffb3ec3aeabfb974_l.jpg"
+                                    alt="Declan Akaba" width="150"><br>Declan Akaba</a></td>
+                        <td><a href="/c/v1ccs159"><img
+                                    src="/file/imgbank/umi92hxs/0vs6dgta/5fa5a4c7cc9328a004157e27905c931a9c56c317_l.jpg"
+                                    alt="Zuzu Boyle" width="150"><br>Zuzu Boyle</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/obzgsm0w"><img
+                                    src="/file/imgbank/umi92hxs/d54sid21/f1346f7c802e28e4dd874e5f0269b052e8415741_l.jpg"
+                                    alt="Gong Strong" width="150"><br>Gong Strong</a></td>
+                        <td><a href="/c/cylgvhxm"><img
+                                    src="/file/imgbank/umi92hxs/u80yx2hr/a4b45fdd382e0a084093085636149b8de16b773d_l.jpg"
+                                    alt="Sylvio Sawatari" width="150"><br>Sylvio Sawatari</a></td>
+                        <td><a href="/c/ad2onwlm"><img
+                                    src="/file/imgbank/umi92hxs/qjvvdbm3/d441420cef6c5a94dbc1cbb07ebed4b4f75dbadf_l.jpg"
+                                    alt="Yuto" width="150"><br>Yuto</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/igobifnw"><img
+                                    src="/file/imgbank/umi92hxs/dsycgjah/b8f26308b3db37bc893cb16972809638b1ef8e3b_l.jpg"
+                                    alt="Sora Perse" width="150"><br>Sora Perse</a></td>
+                        <td><a href="/c/s57cjbes"><img
+                                    src="/file/imgbank/umi92hxs/ypel4gtc/5f6f668cb9e75aa86983779d62a4e6fd9570a582_l.jpg"
+                                    alt="Shay Obsidian" width="150"><br>Shay Obsidian</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        <div class="article-part">
+        <div class="at-btn at-btn-center"><a href="http://duellinks.gamea.co/c/9o8ar8b8" class="btn btn--90">Yu-Gi-Oh
+                Zexal in Duel Links</a></div>
+    </div>
+
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td><a href="/c/gy56ka8h"><img
+                                    src="/file/imgbank/umi92hxs/nmxamnh7/2cfb5d6150cfff66f171882324305ce5c86aecb5_l.jpg"
+                                    alt="Yuma and Astral" width="150"><br>Yuma and Astral</a></td>
+                        <td><a href="/c/1p6xy229"><img
+                                    src="/file/imgbank/umi92hxs/mye3x1qp/be47d0525814d37ff80b27598b15cdbda8829dba_l.jpg"
+                                    alt="Reginald " shark"="" kastle"="" width="150"><br>Reginald "Shark" Kastle</a>
+                        </td>
+                        <td><a href="/c/h7xxfzjn"><img
+                                    src="/file/imgbank/umi92hxs/y9k4bmvg/ec6ebd19399425a45bee047905de120b7d296fd3_l.jpg"
+                                    alt="Bronk Stone" width="150"><br>Bronk Stone</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/ezqkuo26"><img
+                                    src="/file/imgbank/umi92hxs/96ywieml/99e1fc46302f41be1c786e27cd4f5edc1ec75d4b_l.jpg"
+                                    alt="Tori Meadows" width="150"><br>Tori Meadows</a></td>
+                        <td><a href="/c/dsru2knh"><img
+                                    src="/file/imgbank/umi92hxs/oht1b79e/919fcbadd59106431890046c823071a3bcabc38a_l.jpg"
+                                    alt="Kite Tenjo" width="150"><br>Kite Tenjo</a></td>
+                        <td><a href="/c/vwurdtl5"><img
+                                    src="/file/imgbank/umi92hxs/8v0m3mn9/877eba93637eaa76ee64cd3310b41fa8ffb8710c_l.jpg"
+                                    alt="Quattro" width="150"><br>Quattro</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/emtr93bm"><img
+                                    src="/file/imgbank/umi92hxs/rwl77h1l/17f90a8036504f7522dbceade826ef555c0ce48a_l.jpg"
+                                    alt="Trey" width="150"><br>Trey</a></td>
+                        <td><a href="/c/9lh5lv7t"><img
+                                    src="/file/imgbank/umi92hxs/r0kqdlj7/264b80d35b123489db493935fd149e127a37b6c3_l.jpg"
+                                    alt="Anna Kaboom" width="150"><br>Anna Kaboom</a></td>
+                        <td><a href="/c/0zvm6e77"><img
+                                    src="/file/imgbank/umi92hxs/3kk5k18n/51e6fd97d9e30c154301bffd5849ec821b557fa8_l.jpg"
+                                    alt="Rio Kastle" width="150"><br>Rio Kastle</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/mfsadanb"><img
+                                    src="/file/imgbank/umi92hxs/fokx52n9/87c982b8ba376394e305fce6a3056e58244dba0d_l.jpg"
+                                    alt="Girag" width="150"><br>Girag</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    <div class="article-part">
+        <div class="at-btn at-btn-center"><a href="http://duellinks.gamea.co/c/ckjz2ig5" class="btn btn--90">Yugioh DSOD
+                in Duel Links</a></div>
+    </div>
+ 
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td><a href="/c/gt70n9no"><img
+                                    src="/file/imgbank/umi92hxs/0n7ag3tl/549bfb257e373e3b7c8d274afbd8353d10ab97eb_l.jpg"
+                                    alt="Seto Kaiba (DSOD)" width="150"><br>Seto Kaiba (DSOD)</a></td>
+                        <td><a href="/c/fc9s9d01"><img
+                                    src="/file/imgbank/umi92hxs/9mojn1z6/c248fdef32be4850352ee7d1b70e9b123604dd1b_l.jpg"
+                                    alt="Mokuba Kaiba (DSOD)" width="150"><br>Mokuba Kaiba (DSOD)</a></td>
+                        <td><a href="/c/rea5ba3w"><img
+                                    src="/file/imgbank/umi92hxs/1bef6k9c/710ed5ca08df33ab57aacffba84c3d1938cd9d5a_l.jpg"
+                                    alt="Yugi Muto (DSOD)" width="150"><br>Yugi Muto (DSOD)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/h02j30v1"><img
+                                    src="/file/imgbank/umi92hxs/agq1zboz/7ff9d82159ee31298956e248f006b9036ad3bcd6_l.jpg"
+                                    alt="Joey Wheeler (DSOD)" width="150"><br>Joey Wheeler (DSOD)</a></td>
+                        <td><a href="/c/xtvexadv"><img
+                                    src="/file/imgbank/umi92hxs/8jam5yxp/4e924c5b642c8f23cf458b46b28fa058ea10c789_l.jpg"
+                                    alt="Tea Gardner (DSOD)" width="150"><br>Tea Gardner (DSOD)</a></td>
+                        <td><a href="/c/i6mfnztl"><img
+                                    src="/file/imgbank/umi92hxs/9zm9n5w7/649c4a040aee6443210f990c427f55d3bf240f5f_l.jpg"
+                                    alt="Aigami (DSOD)" width="150"><br>Aigami (DSOD)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/5gzfhjai"><img
+                                    src="/file/imgbank/umi92hxs/nxkvnpx5/48e3c07c4a53b1e97cf63159133e53e149c10278_l.jpg"
+                                    alt="Sera (DSOD)" width="150"><br>Sera (DSOD)</a></td>
+                        <td><a href="/c/l8gn7tso"><img
+                                    src="/file/imgbank/umi92hxs/qiuqb70s/4dfa24d35cb0b80fe7b7ee8f1f673ebaf3c895b3_l.jpg"
+                                    alt="Scud (DSOD)" width="150"><br>Scud (DSOD)</a></td>
+                        <td><a href="/c/yg9ilbux"><img
+                                    src="/file/imgbank/umi92hxs/bhpdcs10/5ec544f0f2f9f1831096d41c69e499a1e3c7989c_l.jpg"
+                                    alt="Bakura (DSOD)" width="150"><br>Bakura (DSOD)</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+ <div class="article-part">
+        <h2 class="at-title-a" id="cp597545">Yu-Gi-Oh 5D's</h2>
+    </div>
+
+    
+    <div class="article-part">
+        <div class="at-btn at-btn-center"><a href="http://duellinks.gamea.co/c/1d9k3be2" class="btn btn--90">Yugioh 5D'S
+                in Duel Links</a></div>
+    </div>
+    <div class="article-part">
+        <h3 class="at-title-b" id="cp597551">Legendary Duelists</h3>
+    </div>
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td><a href="/c/n6nk6zzf"><img
+                                    src="/file/imgbank/umi92hxs/vpkzxpj1/4a7aad6b5d41b1e0195067613f916409a9d88bd7_l.jpg"
+                                    alt="Yusei Fudo" width="150"><br>Yusei Fudo</a></td>
+                        <td><a href="/c/gh22f9cu"><img
+                                    src="/file/imgbank/umi92hxs/goeaio88/e85daca489d4ab8ea59223a8964d58a169897a93_l.jpg"
+                                    alt="Jack Atlas" width="150"><br>Jack Atlas</a></td>
+                        <td><a href="/c/ot21lro0"><img
+                                    src="/file/imgbank/umi92hxs/qqfqfls5/c1906a56db710b84ab9149b7e2998070c47e2afa_l.jpg"
+                                    alt="Crow Hogan" width="150"><br>Crow Hogan</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/qdlez5zk"><img
+                                    src="/file/imgbank/umi92hxs/8tibvotc/96bf189d58d09bc11f6ff550bc6408e613186785_l.jpg"
+                                    alt="Akiza Izinski" width="150"><br>Akiza Izinski</a></td>
+                        <td><a href="/c/zqrif0mo"><img
+                                    src="/file/imgbank/umi92hxs/rj0qjjw5/2b6dac980c6b8d836bb4f5a0b04c9062838aa3c5_l.jpg"
+                                    alt="Leo" width="150"><br>Leo</a></td>
+                        <td><a href="/c/hmc18jut"><img
+                                    src="/file/imgbank/umi92hxs/t2a65xek/d3c4c98320cfb4443956f9fb88c90ebec6d86f9c_l.jpg"
+                                    alt="Luna" width="150"><br>Luna</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/ojymt108"><img
+                                    src="/file/imgbank/umi92hxs/pqmxi9zp/e8487888229a8b997bc28a2a6c33d8d9580ef65b_l.jpg"
+                                    alt="Officer Tetsu Trudge" width="150"><br>Officer Tetsu</a></td>
+                        <td><a href="/c/j6hash0k"><img
+                                    src="/file/imgbank/umi92hxs/nj0zqav0/daa215c719d1db5b0219b685977be5d375ba2890_l.jpg"
+                                    alt="DS Kalin Kessler" width="150"><br>DS Kalin Kessler</a></td>
+                        <td><a href="/c/7gr8kokg"><img
+                                    src="/file/imgbank/umi92hxs/48ty8mgj/0b0c6dfbfa5dc135ece973d92e5404abfe52b673_l.jpg"
+                                    alt="DS Carly Carmine" width="150"><br>DS Carly Carmine</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/44f04a5z"><img
+                                    src="/file/imgbank/umi92hxs/yym6q8is/e864d8bc451bac8fb367bfee7cb9d7946d68fbc4_l.jpg"
+                                    alt="DS Rex Goodwin" width="150"><br>DS Rex Goodwin</a></td>
+                        <td><a href="/c/rynudjal"><img
+                                    src="/file/imgbank/umi92hxs/q5zb6ceh/d8c2cc02f1e7e8275775c800b682b62349fc6e99_l.jpg"
+                                    alt="Carly Carmine" width="150"><br>Carly Carmine</a></td>
+                        <td><a href="/c/w6n95tlx"><img
+                                    src="/file/imgbank/umi92hxs/wkgpp0ka/fe2e785fb71ffe2e085650234d945b4ae24748a1_l.jpg"
+                                    alt="Kalin Kessler" width="150"><br>Kalin Kessler</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/ddjhnvta"><img
+                                    src="/file/imgbank/umi92hxs/8pe81yhh/5ec6a725bfa94d4ff478187083c124a29278ef84_l.jpg"
+                                    alt="Antinomy" width="150"><br>Antinomy</a></td>
+                        <td><a href="/c/c9ofbxuh"><img
+                                    src="/file/imgbank/umi92hxs/upq8vjqx/bb724d18e0904a4adcaac4aaed1587974cf45ed2_l.jpg"
+                                    alt="Primo" width="150"><br>Primo</a></td>
+                        <td><a href="/c/fw7zxlpe"><img
+                                    src="/file/imgbank/umi92hxs/d87h0uhi/ee995e2d9804053caf657ad8524652a111b8e2b9_l.jpg"
+                                    alt="Aporia" width="150"><br>Aporia</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/c/35rhyr36"><img
+                                    src="/file/imgbank/umi92hxs/tkdahal5/6f41b462525322bd47d3a64192db4cb37c61f9d7_l.jpg"
+                                    alt="Paradox" width="150"><br>Paradox</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+       <div class="article-part">
+        <h3 class="at-title-b" id="cp464477">Yu-Gi-Oh! (DM)</h3>
+    </div>
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="/c/d67w8gen"><img src="/file/imgbank/umi92hxs/ccvm2bwu/3e36e8dfd8ffc82d92ba83e78f3e946ecc43939d_l.jpg" alt="Yami Yugi" width="150"><br>Yami Yugi</a>
+                        </td>
+                        <td>
+                            <a href="/c/79mvu6bw"><img src="/file/imgbank/umi92hxs/ywes0kkz/d60147c523fc164f54fa8af01c19f8640edf7448_l.jpg" alt="Seto Kaiba" width="150"><br>Seto Kaiba</a>
+                        </td>
+                        <td>
+                            <a href="/c/o3togm2m"><img src="/file/imgbank/umi92hxs/irbsk370/1720c4b1265278049544e9d2152a84cdeee44a7a_l.jpg" alt="Joey Wheeler" width="150"><br>Joey Wheeler</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/ldehglf1"><img src="/file/imgbank/umi92hxs/k2kb85tb/ac5707b6dc601f447ca68a8843b8720de8a95c37_l.jpg" alt="Mai Valentine" width="150"><br>Mai Valentine</a>
+                        </td>
+                        <td>
+                            <a href="/c/yny1zack"><img src="/file/imgbank/umi92hxs/9aoffj92/60ddf4c7bbc1ad7873b9403d14aa916074ec54b9_l.jpg" alt="Tea Gardner" width="150"><br>Tea Gardner</a>
+                        </td>
+                        <td>
+                            <a href="/c/fux4zybe"><img src="/file/imgbank/umi92hxs/07fe6pa6/ad6b71a9b49fd37048a925fdf81a0db129fb4618_l.jpg" alt="Yugi Muto" width="150"><br>Yugi Muto</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/9e0qdhzv"><img src="/file/imgbank/umi92hxs/ohe5rcik/97a102fb3958e76afd6b903d7cc69ebe68a5abd6_l.jpg" alt="Weevil Underwood" width="150"><br>Weevil Underwood</a>
+                        </td>
+                        <td>
+                            <a href="/c/yc1clnnw"><img src="/file/imgbank/umi92hxs/p0nw0tv1/b2c2aa06e8044d1e26d2135fccfe401018a5b2fd_l.jpg" alt="Rex Raptor" width="150"><br>Rex Raptor</a>
+                        </td>
+                        <td>
+                            <a href="/c/xhi75sue"><img src="/file/imgbank/umi92hxs/39wbez9l/f76700d6b16fcff3c1607a8fc03c8ae340d1eacb_l.jpg" alt="Mako Tsunami" width="150"><br>Mako Tsunami</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/h6cmsu6b"><img src="/file/imgbank/umi92hxs/wo6rs3qk/b180572f8a910c0196d57544131a425251b5016a_l.jpg" alt="Yami Marik" width="150"><br>Yami Marik</a>
+                        </td>
+                        <td>
+                            <a href="/c/4068hmte"><img src="/file/imgbank/umi92hxs/fs9ubvml/9eb9a1e91c347f5a434a47822c83aa4fc732d313_l.jpg" alt="Yami Bakura" width="150"><br>Yami Bakura</a>
+                        </td>
+                        <td>
+                            <a href="/c/rag376rm"><img src="/file/imgbank/umi92hxs/9zsbryyk/12706e65fb53d88d0fa3b473e890f66d56e74ff0_l.jpg" alt="Bandit Keith" width="150"><br>Bandit Keith</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/losbh82w"><img src="/file/imgbank/umi92hxs/vvegotn1/fab076a4c773dbf72a98da0a8580ff76066cbeb0_l.jpg" alt="Ishizu Ishtar" width="150"><br>Ishizu Ishtar</a>
+                        </td>
+                        <td>
+                            <a href="/c/bvfe3vmu"><img src="/file/imgbank/umi92hxs/jmsdj75p/6437ce153c3f64df2ada257f5615fc1b8e42c391_l.jpg" alt="Odion" width="150"><br>Odion</a>
+                        </td>
+                        <td>
+                            <a href="/c/r554zftj"><img src="/file/imgbank/umi92hxs/kj9mmli2/8c8d7d4664eb66737ae8ce806b65ef8788f30efb_l.jpg" alt="Maximillion Pegasus" width="150"><br>Maximillion Pegasus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/fokay7k6"><img src="/file/imgbank/umi92hxs/rk571bb9/d82ab57bdf72998fc7a646ed477c48a97b9fbaba_l.jpg" alt="Paradox Brothers" width="150"><br>Paradox Brothers</a>
+                        </td>
+                        <td>
+                            <a href="/c/rx3s5c7d"><img src="/file/imgbank/umi92hxs/9wg8kdeu/ca42aee288356e28151cb3ca3f82a65c84848e3d_l.jpg" alt="Mokuba Kaiba" width="150"><br>Mokuba Kaiba</a>
+                        </td>
+                        <td>
+                            <a href="/c/em857q23"><img src="/file/imgbank/umi92hxs/xml8f7u0/d8644bb5abbdf736344357cec2ddf9eab7c4f6f8_l.jpg" alt="Arkana" width="150"><br>Arkana</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/8gpjpbgd"><img src="/file/imgbank/umi92hxs/wzvyjlj0/d0465963bb216ebc57770c1415cda55632b4671f_l.jpg" alt="Bonz" width="150"><br>Bonz</a>
+                        </td>
+                        <td>
+                            <a href="/c/x3sjbkj9"><img src="/file/imgbank/umi92hxs/d20f8b8b/9500d30ccabb4fcaab21c1e6f88f8e7cc2357b26_l.jpg" alt="Espa Roba" width="150"><br>Espa Roba</a>
+                        </td>
+                        <td>
+                            <a href="/c/pk2j32ra"><img src="/file/imgbank/umi92hxs/7qgsjef0/449c54d0f4a8d291e51d85f969e3469eee362a48_l.jpg" alt="Tristan Taylor" width="150"><br>Tristan Taylor</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/91iy0kfr"><img src="/file/imgbank/umi92hxs/7pzq6fw0/7fd3c023e8687874131cf9525fa5c9d805206437_l.jpg" alt="Umbra &amp; Lumis" width="150"><br>Umbra &amp; Lumis</a>
+                        </td>
+                        <td>
+                            <a href="/c/cjkgc2rh"><img src="/file/imgbank/umi92hxs/yq3zqb90/5a2f692bf98e945d93262d96811d5201ebaacce7_l.jpg" alt="Duke Devlin" width="150"><br>Duke Devlin</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <div class="article-part">
+        <div class="at-btn at-btn-center"><a href="http://duellinks.gamea.co/c/z28ibd98" class="btn btn--90">Yu-Gi-Oh GX
+                in Duel Links</a></div>
+    </div>
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="/c/yep983eq"><img src="/file/imgbank/umi92hxs/scjceu79/55309e9cc1ecad74aede3acba2153f265cb5dfe9_l.jpg" alt="Jaden Yuki" width="150"><br>Jaden Yuki</a>
+                        </td>
+                        <td>
+                            <a href="/c/1pkf7oob"><img src="/file/imgbank/umi92hxs/1vkqv8db/1bec20c9d518944f2bab68662e736c6eaaca8895_l.jpg" alt="Zane Truesdale" width="150"><br>Zane Truesdale</a>
+                        </td>
+                        <td>
+                            <a href="/c/0ozurz19"><img src="/file/imgbank/umi92hxs/9fq0qwhx/ad72122957f147338f8da7e24c41305bf268ae94_l.jpg" alt="Aster Phoenix" width="150"><br>Aster Phoenix</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/oxbddjvk"><img src="/file/imgbank/umi92hxs/71ptz2or/86e5e00db4c695d302d7e1a9fab1efe1fa9c1855_l.jpg" alt="Jesse Anderson" width="150"><br>Jesse Anderson</a>
+                        </td>
+                        <td>
+                            <a href="/c/89omx6ng"><img src="/file/imgbank/umi92hxs/juv14r66/4e092a6d6af4a5a4fc1f832f745d1c5b46c6fb49_l.jpg" alt="Chazz Princeton" width="150"><br>Chazz Princeton</a>
+                        </td>
+                        <td>
+                            <a href="/c/d57braqf"><img src="/file/imgbank/umi92hxs/n6ememt1/e72758ae143975403be39bc727e7c14006998c15_l.jpg" alt="Alexis Rhodes" width="150"><br>Alexis Rhodes</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/ejjhkeei"><img src="/file/imgbank/umi92hxs/92y2ejwa/0753f4cab812a0a3f8cb474197e3046193244950_l.jpg" alt="Vellian Crowler" width="150"><br>Vellian Crowler</a>
+                        </td>
+                        <td>
+                            <a href="/c/oytvfu1r"><img src="/file/imgbank/umi92hxs/5qtz4nwd/cdedf2c1354060326d809170c5f9e8802aaebc47_l.jpg" alt="Bastion Misawa" width="150"><br>Bastion Misawa</a>
+                        </td>
+                        <td>
+                            <a href="/c/c2zh7q4k"><img src="/file/imgbank/umi92hxs/vb6eppjr/3f6aa8a3221b1291b43259f2980124ceae98c5a5_l.jpg" alt="Syrus Truesdale" width="150"><br>Syrus Truesdale</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/t9l25j3y"><img src="/file/imgbank/umi92hxs/wbkb8o6w/478f8261c377c1bb2b6b4f7b811660604952f499_l.jpg" alt="Tyranno Hassleberry" width="150"><br>Tyranno Hassleberry</a>
+                        </td>
+                        <td>
+                            <a href="/c/pxkd7q1x"><img src="/file/imgbank/umi92hxs/xahjdogm/d761eef4071f9b05b059db58888c5d475e386da0_l.jpg" alt="Sartorius Kumar" width="150"><br>Sartorius Kumar</a>
+                        </td>
+                        <td>
+                            <a href="/c/zi30bvow"><img src="/file/imgbank/umi92hxs/5gdypxbt/03e951d832a5ff25c7fb7a2daf9acf2d534fc87b_l.jpg" alt="Yubel" width="150"><br>Yubel</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/civb3e2t"><img src="/file/imgbank/umi92hxs/xkdbsty1/fa2af57e82740016e5216cd561eacc05df1fddde_l.jpg" alt="Jaden/Yubel" width="150"><br>Jaden/Yubel</a>
+                        </td>
+                        <td>
+                            <a href="/c/518xds6n"><img src="/file/imgbank/umi92hxs/kp4cubqh/a53e0628ba4bee5c31458c956a52615ee0f48beb_l.jpg" alt="Blair Flannigan" width="150"><br>Blair Flannigan</a>
+                        </td>
+                        <td>
+                            <a href="/c/otgo5wql"><img src="/file/imgbank/umi92hxs/xag1r3ru/463ad0aa1eaa2be927ea3f892d0001309077b9d5_l.jpg" alt="Axel Brodie" width="150"><br>Axel Brodie</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/8by61l0v"><img src="/file/imgbank/umi92hxs/rent22xn/20884e7a64a0b40559654eca67278f967a21a43c_l.jpg" alt="The Supreme King" width="150"><br>The Supreme King</a>
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+// 
+    <div class="article-part">
+        <h3 class="at-title-b" id="cp394964">Card box</h3>
+    </div>
+    <div class="article-part">
+        <div class="at-md">
+            <table class="textcenter">
+                <tbody>
+                    <tr>
+                        <th colspan="5">Available card boxes</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/3zwdkbj1"><img src="/file/imgbank/umi92hxs/sryebsr8/0b83eb08e88900c6c21b3a094d7a89219453f7ac_200.jpg" width="50" alt="The Ultimate Rising"></a>
+                        </td>
+                        <td>
+                            <a href="/c/8qk7xk26"><img src="/file/imgbank/umi92hxs/2360d7rk/8c60f9c68801d2560fc30826b583dca226ba7b41_200.jpg" width="50" alt="Age of Discovery"></a>
+                        </td>
+                        <td>
+                            <a href="/c/yl0rsr18"><img src="/file/imgbank/umi92hxs/jg1tydda/5592bb2dc18663ac2fb3416cb164db1364348c9a_200.jpg" width="50" alt="Neo-Impact"></a>
+                        </td>
+                        <td>
+                            <a href="/c/z7ws3g84"><img src="/file/imgbank/umi92hxs/61iaxih1/0d294ef86d5fa753f1e003f76bbef988f3ad0741_200.jpg" width="50" alt="Flame of the Tyrant"></a>
+                        </td>
+                        <td>
+                            <a href="/c/8nsfo7p9"><img src="/file/imgbank/umi92hxs/zusaau32/128d08b2c1ae1f2d7cf8b83791e9f468d9fd381c_200.jpg" width="50" alt="Valkyries Rage"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/n8u2mc8m"><img src="/file/imgbank/umi92hxs/lhq7cqpt/c89b4e0ff0c0bb824a1fdfed1c5d46bb0bac7c64_200.jpg" width="50" alt="Wonders of the Sky"></a>
+                        </td>
+                        <td>
+                            <a href="/c/ks7yjd3b"><img src="/file/imgbank/umi92hxs/tutip7qe/3a294fe1aec842839f148fa777e3256f21a479d5_200.jpg" width="50" alt="Chaotic Compliance"></a>
+                        </td>
+                        <td>
+                            <a href="/c/g9rkfo7y"><img src="/file/imgbank/umi92hxs/yrgwu8n2/591e52537e30f18efc9a44f3a42ea0afb8197d72_200.jpg" width="50" alt="Land of the Titans"></a>
+                        </td>
+                        <td>
+                            <a href="/c/k5s1zznz"><img src="/file/imgbank/umi92hxs/2klorgg8/b807cb4528a070191a5cdd349de701ea3ad3111c_200.jpg" width="50" alt="Crimson Kingdom"></a>
+                        </td>
+                        <td>
+                            <a href="/c/2itfv53t"><img src="/file/imgbank/umi92hxs/7zukitxw/b649a2fceba18661397a3acc7d34e5d92f8ce7d0_200.jpg" width="50" alt="Dawn of Destiny"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/rn9wfwd9"><img src="/file/imgbank/umi92hxs/tlnn4eox/7b9ee76355375dd4d42dcebb057d34cadcb3ebde_200.jpg" width="50" alt="Electric Overload"></a>
+                        </td>
+                        <td>
+                            <a href="/c/bqdc8ei1"><img src="/file/imgbank/umi92hxs/ekyphod9/89d1f1ec019d19957fd1a84f3b140e232c98c880_200.jpg" width="50" alt="Echoes of Silence"></a>
+                        </td>
+                        <td>
+                            <a href="/c/9ixkb7qn"><img src="/file/imgbank/umi92hxs/47wl3ur1/dea73903cdb3d16ce183304d155925a1ca000602_200.jpg" width="50"></a>
+                        </td>
+                        <td>
+                            <a href="/c/787m178c"><img src="/file/imgbank/umi92hxs/kiminwva/05c846ae7d0da6c8af0ee8a7c4cb68d419aa3be4_sss.jpg" width="50" alt="Servants of Kings"></a>
+                        </td>
+                        <td>
+                            <a href="/c/vxpl39px"><img src="/file/imgbank/umi92hxs/bkp023rz/26eb75fd707578ec85a7b2ffec21a2b58b7780af_s.jpg" width="50" alt="Galactic Origin"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/7ub1sdk6"><img src="/file/imgbank/umi92hxs/o6b9s2mv/cf4ac8de5489bb05b17225d36aa8c8178c802117_s.jpg" width="50" alt="Blades of Spirit"></a>
+                        </td>
+                        <td>
+                            <a href="/c/gm1u2xr6"><img src="/file/imgbank/umi92hxs/pjgz2trw/7ddd1e5c3482b591ab82c246be42021340ddd0a0_s.jpg" width="50" alt=" Primal Burst"></a>
+                        </td>
+                        <td>
+                            <a href="/c/fqjxzfhk"><img src="/file/imgbank/umi92hxs/xosusika/28e5db7846c62ed2700bc4c263c181ccf87488ef_m.jpg" width="50" alt="Resonance of Contrast"></a>
+                        </td>
+                        <td>
+                            <a href="/c/3od5d40i"><img src="/file/imgbank/umi92hxs/81psukfc/2d56eaf7d8eafda562348ba1b2e732478d22c802_s.jpg" width="50" alt="Abyss Encounter"></a>
+                        </td>
+                        <td>
+                            <a href="/c/izkmugc9"><img src="/file/imgbank/umi92hxs/04vl2x9b/2c98285127b2b71785b58dc4b1bda4a2d6258ec2_s.jpg" width="50" alt="Rampage of the Forest"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/p845bnsy"><img src="/file/imgbank/umi92hxs/7lsw31ws/8f095fbbb6044aa68792e10ddf775989b9b7a756_s.jpg" width="50" alt="Valiant Souls"></a>
+                        </td>
+                        <td>
+                            <a href="/c/zwkqcgne"><img src="/file/imgbank/umi92hxs/kdyi7gpe/e2332713208b66c1e5b36254b4e7f73b4cf3b65e_s.jpg" width="50" alt="Visions of Ice"></a>
+                        </td>
+                        <td>
+                            <a href="/c/emplj01f"><img src="/file/imgbank/umi92hxs/isaa65qj/f4e3087795d52ed9685f2de16fbd04f94e7d98c9_s.jpg" width="50" alt="Crusaders Battleground"></a>
+                        </td>
+                        <td>
+                            <a href="/c/prmw6592"><img src="/file/imgbank/umi92hxs/18lrv9du/32af875e148ece0d28de722724470a792520d000_s.jpg" width="50" alt="Clash of Wings"></a>
+                        </td>
+                        <td>
+                            <a href="/c/eyq7qj6e"><img src="/file/imgbank/umi92hxs/7aozoxvp/ebe8aa5a4266266fb7369e4b66c443460181fa7a_s.jpg" width="50" alt="Burning Nova"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/slj354sh"><img src="/file/imgbank/umi92hxs/wij446y6/71f12aad80a7cbd781aa0f7075dd838cd6c59b53_s.jpg" width="50" alt="Empire of Scarlet"></a>
+                        </td>
+                        <td>
+                            <a href="/c/3lzr8vpa"><img src="/file/imgbank/umi92hxs/gl16ngky/f8f0efd602514f55dc169105b0dc74b8a39b6685_s.jpg" width="50" alt="Gaia Genesis"></a>
+                        </td>
+                        <td>
+                            <a href="/c/xlig8rbh"><img src="/file/imgbank/umi92hxs/qaybic2j/889e434fb5dc70e19df1e70f33577f19513735b8_s.jpg" width="50" alt="Stardust Acceleration"></a>
+                        </td>
+                        <td>
+                            <a href="/c/02hf8krr"><img src="/file/imgbank/umi92hxs/u3ilaf6u/6542515cbb956dc70f76d2d8fd95ea5baaf33742_s.jpg" width="50" alt="Power of Bravery"></a>
+                        </td>
+                        <td>
+                            <a href="/c/fa5xe1wn"><img src="/file/imgbank/umi92hxs/1in2iqnd/d098a75c2f51c8f212b2387b3d3344a04b9d7629_s.jpg" width="50" alt="Blackstorm Rising"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/82t31ryg"><img src="/file/imgbank/umi92hxs/d9zjkfoh/46922a0b9f83fc723b5921ed110364872e98890c_s.jpg" width="50" alt="Secrets of the Ancients"></a>
+                        </td>
+                        <td>
+                            <a href="/c/x1xbiuki"><img src="/file/imgbank/umi92hxs/2jzt9ktb/500d4e8a451038f114f09c976491488f9acd68b9_s.jpg" width="50" alt="Revolution Beginning"></a>
+                        </td>
+                        <td>
+                            <a href="/c/x9p6a1oi"><img src="/file/imgbank/umi92hxs/ehpy3bx4/91e82b93f5e0ce70e12f014bc8dd5a2dae5e40ec_s.jpg" width="50" alt="Tornado of Phantoms"></a>
+                        </td>
+                        <td>
+                            <a href="/c/gou0gubc"><img src="/file/imgbank/umi92hxs/9unm5j9k/409f468133955b7d65caa135a582f79dceb3cca9_s.jpg" width="50" alt="Absolute Inferno"></a>
+                        </td>
+                        <td>
+                            <a href="/c/ko1dwajl"><img src="/file/imgbank/umi92hxs/ih1n93zr/7baa7f85baacea8d3487189e1e6ffc878f9a38f8_s.jpg" width="50" alt="Dimension of the Wizards"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/zqm6zpwa"><img src="/file/imgbank/umi92hxs/jdzn60m7/06bedafd134abe03357b9654df16adce1d6c7a53_s.jpg" width="50" alt="Warriors Unite"></a>
+                        </td>
+                        <td>
+                            <a href="/c/u1q3nh7n"><img src="/file/imgbank/umi92hxs/m4i7b3zn/92fa52df4c66cd11dfeaa7c0b99ceb8c3d92bc7f_s.jpg" width="50" alt="Lords of Shining"></a>
+                        </td>
+                        <td>
+                            <a href="/c/syecmcvi"><img src="/file/imgbank/umi92hxs/ld7y0fq9/07b4b10389860a9211bc6ba066058b1a66a77f7f_s.jpg" width="50" alt="Blazing Rose"></a>
+                        </td>
+                        <td>
+                            <a href="/c/xmnnz9ja"><img src="/file/imgbank/umi92hxs/c83myo7p/179290ae69931a932c6125ea2079038dccbed328_s.jpg" width="50" alt="Guardians of Rock"></a>
+                        </td>
+                        <td>
+                            <a href="/c/qrbo91lt"><img src="/file/imgbank/umi92hxs/cjy59uuk/9794d2b10ac2b6b19f0e54421dcf0f18981f748d_s.jpg" width="50" alt="Cybernetic Rebellion"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/x5zmdm71"><img src="/file/imgbank/umi92hxs/r3te9afx/51878b565dd4002cf718039cbd62b95d6ab9db6b_s.jpg" width="50" alt="Curse of Dread"></a>
+                        </td>
+                        <td>
+                            <a href="/c/8kofqofs"><img src="/file/imgbank/umi92hxs/irf0pm7r/18238852c93adf8329f2861692c0c3c564ec25c1_s.jpg" width="50" alt="Valhalla Calling"></a>
+                        </td>
+                        <td>
+                            <a href="/c/9oun3e61"><img src="/file/imgbank/umi92hxs/atygcnhg/fa25b041ce6ef5b1c91d64f49cbbbfc7dbb384fc_s.jpg" width="50" alt="Dark Dimension"></a>
+                        </td>
+                        <td>
+                            <a href="/c/o9l4ie3z"><img src="/file/imgbank/umi92hxs/8o6796mm/e65e69a055c81552da60985af7c4e17968e1d54d_s.jpg" width="50" alt="Spirit of the Beast"></a>
+                        </td>
+                        <td>
+                            <a href="/c/fpg1qc2i"><img src="/file/imgbank/umi92hxs/jbu371o7/9cfce0a9efa5b7f75aa8f4667f16fd5a1300ca8e_s.jpg" width="50" alt="Aerial Assault"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/z64imu96"><img src="/file/imgbank/umi92hxs/x6s718nw/e12006f6882d0cbdc3d9224a0804c9745973978f_s.jpg" width="50" alt="Soul of Resurrection"></a>
+                        </td>
+                        <td>
+                            <a href="/c/hlvet3bh"><img src="/file/imgbank/umi92hxs/3ak7knlb/603aaccb59ceeacdcf554624102a03ad1b67fc77_s.jpg" width="50" alt="Future Horizon"></a>
+                        </td>
+                        <td>
+                            <a href="/c/c09ufie9"><img src="/file/imgbank/umi92hxs/qpnldrsx/75fb49712b9c7270fd8c93734c1cdbb5495ea6c9_s.jpg" width="50" alt="Masters of Shadow"></a>
+                        </td>
+                        <td>
+                            <a href="/c/gnsogqmb"><img src="/file/imgbank/umi92hxs/ty7u1uz5/196b2cb6a29c31c9ac6ced3571b01818fb1114a1_s.jpg" width="50" alt="Judgement Force"></a>
+                        </td>
+                        <td>
+                            <a href="/c/t72px5qo"><img src="/file/imgbank/umi92hxs/4pp0mtnz/4882b02c025f45b3312a6729b4658ae129425bec_s.jpg" width="50" alt="Fortress of Gears"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/s8dlbebs"><img src="/file/imgbank/umi92hxs/1058xjqt/d091045951b93a3c00c41171fef08f14b1ea4a94_s.jpg" width="50" alt="Truth Universe"></a>
+                        </td>
+                        <td>
+                            <a href="/c/1jjy06co"><img src="/file/imgbank/umi92hxs/yxh7k9bk/473a26f751b1a01e25678ee13a3b4edcb61e4032_s.jpg" width="50" alt="Flames of the Heart"></a>
+                        </td>
+                        <td>
+                            <a href="/c/f924evy9"><img src="/file/imgbank/umi92hxs/89ul8hmz/b6d1fd51f9cd71e9a35797755e2a18a93c074353_s.jpg" width="50" alt="Witchs Sorcery"></a>
+                        </td>
+                        <td>
+                            <a href="/c/gim9swke"><img src="/file/imgbank/umi92hxs/2nvqp0sf/c4df812500622c5aa6138402a362abb81f6b21c5_s.jpg" width="50" alt="Chronicle of Glory"></a>
+                        </td>
+                        <td>
+                            <a href="/c/4cjj7kx6"><img src="/file/imgbank/umi92hxs/6zoecfnc/710c616ed13dfc1b7434d010898d2a5651fa8686_s.jpg" width="50" alt="Infernity Destruction"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/nd1zs3rv"><img src="/file/imgbank/umi92hxs/z585xjs4/fcac231c7d90b6c8a0f7825433299564f3ac7f03_s.jpg" width="50" alt="Arena of Sanctuary"></a>
+                        </td>
+                        <td>
+                            <a href="/c/jao8d7xi"><img src="/file/imgbank/umi92hxs/utwqxvhb/cde3aeaa4059f024932b2ab3c62f9b3447a9c31c_s.jpg" width="50" alt="Shining Hope"></a>
+                        </td>
+                        <td>
+                            <a href="/c/x90u1hfp"><img src="/file/imgbank/umi92hxs/ty94xqn5/edb168db8da9c9414f35f7fdb5ac66bd576279fa_s.jpg" width="50" alt="Voltage of the Metal"></a>
+                        </td>
+                        <td>
+                            <a href="/c/lceuokay"><img src="/file/imgbank/umi92hxs/i1cjjbek/ac8315aa33008edfaff4e3133dabcdc56ea9d13d_s.jpg" width="50" alt="Shark Fang"></a>
+                        </td>
+                        <td>
+                            <a href="/c/uuvtlj2o"><img src="/file/imgbank/umi92hxs/crnojbbr/6307f148b71cd1ceff5e5d2dbfd13c5f7e5d6683_s.jpg" width="50" alt="Rage of Volcano"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/olinyhjz"><img src="/file/imgbank/umi92hxs/970f0vco/712345c9b2eb93e312b6770567441905c6d9e42f_s.jpg" width="50" alt="Infinite Ray"></a>
+                        </td>
+                        <td>
+                            <a href="/c/hp3wc60d"><img src="/file/imgbank/umi92hxs/9jbuv6w1/c74a0334ff74ec6e5b02085d3f802c0077d85f1e_s.jpg" width="50" alt="Photons of Galaxy"></a>
+                        </td>
+                        <td>
+                            <a href="/c/xgewi7vu"><img src="/file/imgbank/umi92hxs/gpqm6aw5/bf1eaddac9232fa9ee77603449cfbc6b4bfc0a0b_s.jpg" width="50" alt="Antinomic Theory"></a>
+                        </td>
+                        <td>
+                            <a href="/c/d1c07c3g"><img src="/file/imgbank/umi92hxs/os0qg8qm/98d0a3079473a8b338f15e307670f85493f20ac4_s.jpg" width="50" alt="Sign of Harpies"></a>
+                        </td>
+                        <td>
+                            <a href="/c/5yhfql8t"><img src="/file/imgbank/umi92hxs/v5w0nkzl/4f038010c42e57bf8c95c5f287983ee86a862c55_s.jpg" width="50" alt="Eternal Stream"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/wzxvhxm4"><img src="/file/imgbank/umi92hxs/siua2dr4/2b8af4e3db475c05b7c182c3f73300258b582bdf_s.jpg" width="50" alt="The King of Vermillion"></a>
+                        </td>
+                        <td>
+                            <a href="/c/6wg2brhz"><img src="/file/imgbank/umi92hxs/9wrnp0wh/7837db09852c1bf22f2e4695cb1777603baabce0_s.jpg" width="50" alt="Darkness Gimmick"></a>
+                        </td>
+                        <td>
+                            <a href="/c/3k87gwc8"><img src="/file/imgbank/umi92hxs/r0f8kig6/05adb7080ac183c22b2fc7ed9e82081d4c49a822_s.jpg" width="50" alt="Arts of Atlantis"></a>
+                        </td>
+                        <td>
+                            <a href="/c/mgwlhko3"><img src="/file/imgbank/umi92hxs/fhc0yp8v/b91f6349da3198a1f0c407b7653ea26f20ba5b54_s.jpg" width="50" alt="Pendulum Genesis"></a>
+                        </td>
+                        <td>
+                            <a href="/c/ti0zs0xv"><img src="/file/imgbank/umi92hxs/ilma096c/6e23cac4d51d50f2486451d93415857ea909b096_s.jpg" width="50" alt="Idea of Armageddon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/78kqv08s"><img src="/file/imgbank/umi92hxs/71m4pn5j/6207c5e7c2979f75366998abb1979323f5123775_s.jpg" width="50" alt="Chaotic Soldiers"></a>
+                        </td>
+                        <td>
+                            <a href="/c/2ffnm6tr"><img src="/file/imgbank/umi92hxs/nk9aomc3/fc9cf4ae37a6d3889efbe38fbf0e0463bed5db8d_s.jpg" width="50" alt="Force of Infinity"></a>
+                        </td>
+                        <td>
+                            <a href="/c/3zfx9ru7"><img src="/file/imgbank/umi92hxs/nhhcpk8v/ea230958906fd0103d0009783c412518f0a3298b_s.jpg" width="50" alt="Fantastic Arc"></a>
+                        </td>
+                        <td>
+                            <a href="/c/s9fgj5wg"><img src="/file/imgbank/umi92hxs/zci07eh9/81a3e722c7f353f64a5c03c8e6627fd6855653f1_s.jpg" width="50" alt="Phantom of Rebellion"></a>
+                        </td>
+                        <td>
+                            <a href="/c/eiq09zq3"><img src="/file/imgbank/umi92hxs/i194eg7m/a7d37d52759688bc2b8dc65f6b507a542b43d6e5_s.jpg" width="50" alt="Maximum Gustav"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/g801rafn"><img src="/file/imgbank/umi92hxs/y0i3skms/1386827a11eea13792183620bc8b8cc42ddf36a2_s.jpg" width="50" alt="Heart of Xyz"></a>
+                        </td>
+                        <td>
+                            <a href="/c/pr727o97"><img src="/file/imgbank/umi92hxs/8qkq3g42/38b1bb2379739bf490c498b5832246c14ed65a0c_s.jpg" width="50" alt="Shining Sunrise"></a>
+                        </td>
+                        <td>
+                            <a href="/c/tt7xfzoz"><img src="/file/imgbank/umi92hxs/0t2xwmxc/053859baacd9b42a9ad3247a8e6566f802293ff1_s.jpg" width="50" alt="Stars of Synchro"></a>
+                        </td>
+                        <td>
+                            <a href="/c/kojvyk16"><img src="/file/imgbank/umi92hxs/dpst381l/9884be3619546cd5ac286960947d1ca34215dbf8_s.jpg" width="50" alt="Link Revolution"></a>
+                        </td>
+                        <td>
+                            <a href="/c/53fs2f8c"><img src="/file/imgbank/umi92hxs/jpshpcly/c64871f8714f44d53a9c4a53f5baa53704b5688f_s.jpg" width="50" alt="Stage of Trickstar"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/c/ntihmb65"><img src="/file/imgbank/umi92hxs/8hu32sbp/a52d1eb3e0c157d67f80ae5367df66c34556c9a3_s.jpg" width="50" alt="Braver Victory"></a>
+                        </td>
+                        <td>
+                            <a href="/c/imwzf0m5"><img src="/file/imgbank/umi92hxs/l25aab9i/cdbb7c2e319aba232c14f0be70730c2f6bf4a1a3_s.jpg" width="50" alt="Arms of Giant"></a>
+                        </td>
+                        <td>
+                            <a href="/c/e9cerswa"><img src="/file/imgbank/umi92hxs/ioy6edpf/3ee0c5b0cbd9f2c96c06b3de93d3a0f84ac81db6_s.jpg" width="50" alt="Future Circuit"></a>
+                        </td>
+                        <td>
+                            <a href="/c/pl71bl4x"><img src="/file/imgbank/umi92hxs/hlstfzwv/8843dc9b5dde48e9998993426c864941e15d8b56_s.jpg" width="50" alt="Lord of Borrel"></a>
+                        </td>
+                        <td>
+                            <a href="/c/pamtcsfl"><img src="/file/imgbank/umi92hxs/38o7q95p/8a4eb188363f79dc3cba72c768f9c4321101acb1_s.jpg" width="50" alt="Raiders Requiem"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+`;
+
+
+
+
+
+
+
+
+
+// (async() => {
+//     let toAnalizate = `
+//     <div class="article-part">
+//         <h3 class="at-title-b" id="cp394964">Card box</h3>
+//     </div>
+//     <div class="article-part">
+//         <div class="at-md">
+//             <table class="textcenter">
+//                 <tbody>
+//                     <tr>
+//                         <th colspan="5">Available card boxes</th>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/3zwdkbj1"><img src="/file/imgbank/umi92hxs/sryebsr8/0b83eb08e88900c6c21b3a094d7a89219453f7ac_200.jpg" width="50" alt="The Ultimate Rising"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/8qk7xk26"><img src="/file/imgbank/umi92hxs/2360d7rk/8c60f9c68801d2560fc30826b583dca226ba7b41_200.jpg" width="50" alt="Age of Discovery"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/yl0rsr18"><img src="/file/imgbank/umi92hxs/jg1tydda/5592bb2dc18663ac2fb3416cb164db1364348c9a_200.jpg" width="50" alt="Neo-Impact"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/z7ws3g84"><img src="/file/imgbank/umi92hxs/61iaxih1/0d294ef86d5fa753f1e003f76bbef988f3ad0741_200.jpg" width="50" alt="Flame of the Tyrant"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/8nsfo7p9"><img src="/file/imgbank/umi92hxs/zusaau32/128d08b2c1ae1f2d7cf8b83791e9f468d9fd381c_200.jpg" width="50" alt="Valkyries Rage"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/n8u2mc8m"><img src="/file/imgbank/umi92hxs/lhq7cqpt/c89b4e0ff0c0bb824a1fdfed1c5d46bb0bac7c64_200.jpg" width="50" alt="Wonders of the Sky"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/ks7yjd3b"><img src="/file/imgbank/umi92hxs/tutip7qe/3a294fe1aec842839f148fa777e3256f21a479d5_200.jpg" width="50" alt="Chaotic Compliance"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/g9rkfo7y"><img src="/file/imgbank/umi92hxs/yrgwu8n2/591e52537e30f18efc9a44f3a42ea0afb8197d72_200.jpg" width="50" alt="Land of the Titans"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/k5s1zznz"><img src="/file/imgbank/umi92hxs/2klorgg8/b807cb4528a070191a5cdd349de701ea3ad3111c_200.jpg" width="50" alt="Crimson Kingdom"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/2itfv53t"><img src="/file/imgbank/umi92hxs/7zukitxw/b649a2fceba18661397a3acc7d34e5d92f8ce7d0_200.jpg" width="50" alt="Dawn of Destiny"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/rn9wfwd9"><img src="/file/imgbank/umi92hxs/tlnn4eox/7b9ee76355375dd4d42dcebb057d34cadcb3ebde_200.jpg" width="50" alt="Electric Overload"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/bqdc8ei1"><img src="/file/imgbank/umi92hxs/ekyphod9/89d1f1ec019d19957fd1a84f3b140e232c98c880_200.jpg" width="50" alt="Echoes of Silence"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/9ixkb7qn"><img src="/file/imgbank/umi92hxs/47wl3ur1/dea73903cdb3d16ce183304d155925a1ca000602_200.jpg" width="50"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/787m178c"><img src="/file/imgbank/umi92hxs/kiminwva/05c846ae7d0da6c8af0ee8a7c4cb68d419aa3be4_sss.jpg" width="50" alt="Servants of Kings"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/vxpl39px"><img src="/file/imgbank/umi92hxs/bkp023rz/26eb75fd707578ec85a7b2ffec21a2b58b7780af_s.jpg" width="50" alt="Galactic Origin"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/7ub1sdk6"><img src="/file/imgbank/umi92hxs/o6b9s2mv/cf4ac8de5489bb05b17225d36aa8c8178c802117_s.jpg" width="50" alt="Blades of Spirit"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/gm1u2xr6"><img src="/file/imgbank/umi92hxs/pjgz2trw/7ddd1e5c3482b591ab82c246be42021340ddd0a0_s.jpg" width="50" alt=" Primal Burst"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/fqjxzfhk"><img src="/file/imgbank/umi92hxs/xosusika/28e5db7846c62ed2700bc4c263c181ccf87488ef_m.jpg" width="50" alt="Resonance of Contrast"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/3od5d40i"><img src="/file/imgbank/umi92hxs/81psukfc/2d56eaf7d8eafda562348ba1b2e732478d22c802_s.jpg" width="50" alt="Abyss Encounter"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/izkmugc9"><img src="/file/imgbank/umi92hxs/04vl2x9b/2c98285127b2b71785b58dc4b1bda4a2d6258ec2_s.jpg" width="50" alt="Rampage of the Forest"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/p845bnsy"><img src="/file/imgbank/umi92hxs/7lsw31ws/8f095fbbb6044aa68792e10ddf775989b9b7a756_s.jpg" width="50" alt="Valiant Souls"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/zwkqcgne"><img src="/file/imgbank/umi92hxs/kdyi7gpe/e2332713208b66c1e5b36254b4e7f73b4cf3b65e_s.jpg" width="50" alt="Visions of Ice"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/emplj01f"><img src="/file/imgbank/umi92hxs/isaa65qj/f4e3087795d52ed9685f2de16fbd04f94e7d98c9_s.jpg" width="50" alt="Crusaders Battleground"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/prmw6592"><img src="/file/imgbank/umi92hxs/18lrv9du/32af875e148ece0d28de722724470a792520d000_s.jpg" width="50" alt="Clash of Wings"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/eyq7qj6e"><img src="/file/imgbank/umi92hxs/7aozoxvp/ebe8aa5a4266266fb7369e4b66c443460181fa7a_s.jpg" width="50" alt="Burning Nova"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/slj354sh"><img src="/file/imgbank/umi92hxs/wij446y6/71f12aad80a7cbd781aa0f7075dd838cd6c59b53_s.jpg" width="50" alt="Empire of Scarlet"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/3lzr8vpa"><img src="/file/imgbank/umi92hxs/gl16ngky/f8f0efd602514f55dc169105b0dc74b8a39b6685_s.jpg" width="50" alt="Gaia Genesis"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/xlig8rbh"><img src="/file/imgbank/umi92hxs/qaybic2j/889e434fb5dc70e19df1e70f33577f19513735b8_s.jpg" width="50" alt="Stardust Acceleration"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/02hf8krr"><img src="/file/imgbank/umi92hxs/u3ilaf6u/6542515cbb956dc70f76d2d8fd95ea5baaf33742_s.jpg" width="50" alt="Power of Bravery"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/fa5xe1wn"><img src="/file/imgbank/umi92hxs/1in2iqnd/d098a75c2f51c8f212b2387b3d3344a04b9d7629_s.jpg" width="50" alt="Blackstorm Rising"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/82t31ryg"><img src="/file/imgbank/umi92hxs/d9zjkfoh/46922a0b9f83fc723b5921ed110364872e98890c_s.jpg" width="50" alt="Secrets of the Ancients"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/x1xbiuki"><img src="/file/imgbank/umi92hxs/2jzt9ktb/500d4e8a451038f114f09c976491488f9acd68b9_s.jpg" width="50" alt="Revolution Beginning"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/x9p6a1oi"><img src="/file/imgbank/umi92hxs/ehpy3bx4/91e82b93f5e0ce70e12f014bc8dd5a2dae5e40ec_s.jpg" width="50" alt="Tornado of Phantoms"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/gou0gubc"><img src="/file/imgbank/umi92hxs/9unm5j9k/409f468133955b7d65caa135a582f79dceb3cca9_s.jpg" width="50" alt="Absolute Inferno"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/ko1dwajl"><img src="/file/imgbank/umi92hxs/ih1n93zr/7baa7f85baacea8d3487189e1e6ffc878f9a38f8_s.jpg" width="50" alt="Dimension of the Wizards"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/zqm6zpwa"><img src="/file/imgbank/umi92hxs/jdzn60m7/06bedafd134abe03357b9654df16adce1d6c7a53_s.jpg" width="50" alt="Warriors Unite"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/u1q3nh7n"><img src="/file/imgbank/umi92hxs/m4i7b3zn/92fa52df4c66cd11dfeaa7c0b99ceb8c3d92bc7f_s.jpg" width="50" alt="Lords of Shining"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/syecmcvi"><img src="/file/imgbank/umi92hxs/ld7y0fq9/07b4b10389860a9211bc6ba066058b1a66a77f7f_s.jpg" width="50" alt="Blazing Rose"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/xmnnz9ja"><img src="/file/imgbank/umi92hxs/c83myo7p/179290ae69931a932c6125ea2079038dccbed328_s.jpg" width="50" alt="Guardians of Rock"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/qrbo91lt"><img src="/file/imgbank/umi92hxs/cjy59uuk/9794d2b10ac2b6b19f0e54421dcf0f18981f748d_s.jpg" width="50" alt="Cybernetic Rebellion"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/x5zmdm71"><img src="/file/imgbank/umi92hxs/r3te9afx/51878b565dd4002cf718039cbd62b95d6ab9db6b_s.jpg" width="50" alt="Curse of Dread"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/8kofqofs"><img src="/file/imgbank/umi92hxs/irf0pm7r/18238852c93adf8329f2861692c0c3c564ec25c1_s.jpg" width="50" alt="Valhalla Calling"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/9oun3e61"><img src="/file/imgbank/umi92hxs/atygcnhg/fa25b041ce6ef5b1c91d64f49cbbbfc7dbb384fc_s.jpg" width="50" alt="Dark Dimension"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/o9l4ie3z"><img src="/file/imgbank/umi92hxs/8o6796mm/e65e69a055c81552da60985af7c4e17968e1d54d_s.jpg" width="50" alt="Spirit of the Beast"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/fpg1qc2i"><img src="/file/imgbank/umi92hxs/jbu371o7/9cfce0a9efa5b7f75aa8f4667f16fd5a1300ca8e_s.jpg" width="50" alt="Aerial Assault"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/z64imu96"><img src="/file/imgbank/umi92hxs/x6s718nw/e12006f6882d0cbdc3d9224a0804c9745973978f_s.jpg" width="50" alt="Soul of Resurrection"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/hlvet3bh"><img src="/file/imgbank/umi92hxs/3ak7knlb/603aaccb59ceeacdcf554624102a03ad1b67fc77_s.jpg" width="50" alt="Future Horizon"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/c09ufie9"><img src="/file/imgbank/umi92hxs/qpnldrsx/75fb49712b9c7270fd8c93734c1cdbb5495ea6c9_s.jpg" width="50" alt="Masters of Shadow"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/gnsogqmb"><img src="/file/imgbank/umi92hxs/ty7u1uz5/196b2cb6a29c31c9ac6ced3571b01818fb1114a1_s.jpg" width="50" alt="Judgement Force"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/t72px5qo"><img src="/file/imgbank/umi92hxs/4pp0mtnz/4882b02c025f45b3312a6729b4658ae129425bec_s.jpg" width="50" alt="Fortress of Gears"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/s8dlbebs"><img src="/file/imgbank/umi92hxs/1058xjqt/d091045951b93a3c00c41171fef08f14b1ea4a94_s.jpg" width="50" alt="Truth Universe"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/1jjy06co"><img src="/file/imgbank/umi92hxs/yxh7k9bk/473a26f751b1a01e25678ee13a3b4edcb61e4032_s.jpg" width="50" alt="Flames of the Heart"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/f924evy9"><img src="/file/imgbank/umi92hxs/89ul8hmz/b6d1fd51f9cd71e9a35797755e2a18a93c074353_s.jpg" width="50" alt="Witchs Sorcery"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/gim9swke"><img src="/file/imgbank/umi92hxs/2nvqp0sf/c4df812500622c5aa6138402a362abb81f6b21c5_s.jpg" width="50" alt="Chronicle of Glory"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/4cjj7kx6"><img src="/file/imgbank/umi92hxs/6zoecfnc/710c616ed13dfc1b7434d010898d2a5651fa8686_s.jpg" width="50" alt="Infernity Destruction"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/nd1zs3rv"><img src="/file/imgbank/umi92hxs/z585xjs4/fcac231c7d90b6c8a0f7825433299564f3ac7f03_s.jpg" width="50" alt="Arena of Sanctuary"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/jao8d7xi"><img src="/file/imgbank/umi92hxs/utwqxvhb/cde3aeaa4059f024932b2ab3c62f9b3447a9c31c_s.jpg" width="50" alt="Shining Hope"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/x90u1hfp"><img src="/file/imgbank/umi92hxs/ty94xqn5/edb168db8da9c9414f35f7fdb5ac66bd576279fa_s.jpg" width="50" alt="Voltage of the Metal"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/lceuokay"><img src="/file/imgbank/umi92hxs/i1cjjbek/ac8315aa33008edfaff4e3133dabcdc56ea9d13d_s.jpg" width="50" alt="Shark Fang"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/uuvtlj2o"><img src="/file/imgbank/umi92hxs/crnojbbr/6307f148b71cd1ceff5e5d2dbfd13c5f7e5d6683_s.jpg" width="50" alt="Rage of Volcano"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/olinyhjz"><img src="/file/imgbank/umi92hxs/970f0vco/712345c9b2eb93e312b6770567441905c6d9e42f_s.jpg" width="50" alt="Infinite Ray"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/hp3wc60d"><img src="/file/imgbank/umi92hxs/9jbuv6w1/c74a0334ff74ec6e5b02085d3f802c0077d85f1e_s.jpg" width="50" alt="Photons of Galaxy"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/xgewi7vu"><img src="/file/imgbank/umi92hxs/gpqm6aw5/bf1eaddac9232fa9ee77603449cfbc6b4bfc0a0b_s.jpg" width="50" alt="Antinomic Theory"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/d1c07c3g"><img src="/file/imgbank/umi92hxs/os0qg8qm/98d0a3079473a8b338f15e307670f85493f20ac4_s.jpg" width="50" alt="Sign of Harpies"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/5yhfql8t"><img src="/file/imgbank/umi92hxs/v5w0nkzl/4f038010c42e57bf8c95c5f287983ee86a862c55_s.jpg" width="50" alt="Eternal Stream"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/wzxvhxm4"><img src="/file/imgbank/umi92hxs/siua2dr4/2b8af4e3db475c05b7c182c3f73300258b582bdf_s.jpg" width="50" alt="The King of Vermillion"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/6wg2brhz"><img src="/file/imgbank/umi92hxs/9wrnp0wh/7837db09852c1bf22f2e4695cb1777603baabce0_s.jpg" width="50" alt="Darkness Gimmick"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/3k87gwc8"><img src="/file/imgbank/umi92hxs/r0f8kig6/05adb7080ac183c22b2fc7ed9e82081d4c49a822_s.jpg" width="50" alt="Arts of Atlantis"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/mgwlhko3"><img src="/file/imgbank/umi92hxs/fhc0yp8v/b91f6349da3198a1f0c407b7653ea26f20ba5b54_s.jpg" width="50" alt="Pendulum Genesis"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/ti0zs0xv"><img src="/file/imgbank/umi92hxs/ilma096c/6e23cac4d51d50f2486451d93415857ea909b096_s.jpg" width="50" alt="Idea of Armageddon"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/78kqv08s"><img src="/file/imgbank/umi92hxs/71m4pn5j/6207c5e7c2979f75366998abb1979323f5123775_s.jpg" width="50" alt="Chaotic Soldiers"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/2ffnm6tr"><img src="/file/imgbank/umi92hxs/nk9aomc3/fc9cf4ae37a6d3889efbe38fbf0e0463bed5db8d_s.jpg" width="50" alt="Force of Infinity"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/3zfx9ru7"><img src="/file/imgbank/umi92hxs/nhhcpk8v/ea230958906fd0103d0009783c412518f0a3298b_s.jpg" width="50" alt="Fantastic Arc"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/s9fgj5wg"><img src="/file/imgbank/umi92hxs/zci07eh9/81a3e722c7f353f64a5c03c8e6627fd6855653f1_s.jpg" width="50" alt="Phantom of Rebellion"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/eiq09zq3"><img src="/file/imgbank/umi92hxs/i194eg7m/a7d37d52759688bc2b8dc65f6b507a542b43d6e5_s.jpg" width="50" alt="Maximum Gustav"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/g801rafn"><img src="/file/imgbank/umi92hxs/y0i3skms/1386827a11eea13792183620bc8b8cc42ddf36a2_s.jpg" width="50" alt="Heart of Xyz"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/pr727o97"><img src="/file/imgbank/umi92hxs/8qkq3g42/38b1bb2379739bf490c498b5832246c14ed65a0c_s.jpg" width="50" alt="Shining Sunrise"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/tt7xfzoz"><img src="/file/imgbank/umi92hxs/0t2xwmxc/053859baacd9b42a9ad3247a8e6566f802293ff1_s.jpg" width="50" alt="Stars of Synchro"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/kojvyk16"><img src="/file/imgbank/umi92hxs/dpst381l/9884be3619546cd5ac286960947d1ca34215dbf8_s.jpg" width="50" alt="Link Revolution"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/53fs2f8c"><img src="/file/imgbank/umi92hxs/jpshpcly/c64871f8714f44d53a9c4a53f5baa53704b5688f_s.jpg" width="50" alt="Stage of Trickstar"></a>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <a href="/c/ntihmb65"><img src="/file/imgbank/umi92hxs/8hu32sbp/a52d1eb3e0c157d67f80ae5367df66c34556c9a3_s.jpg" width="50" alt="Braver Victory"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/imwzf0m5"><img src="/file/imgbank/umi92hxs/l25aab9i/cdbb7c2e319aba232c14f0be70730c2f6bf4a1a3_s.jpg" width="50" alt="Arms of Giant"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/e9cerswa"><img src="/file/imgbank/umi92hxs/ioy6edpf/3ee0c5b0cbd9f2c96c06b3de93d3a0f84ac81db6_s.jpg" width="50" alt="Future Circuit"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/pl71bl4x"><img src="/file/imgbank/umi92hxs/hlstfzwv/8843dc9b5dde48e9998993426c864941e15d8b56_s.jpg" width="50" alt="Lord of Borrel"></a>
+//                         </td>
+//                         <td>
+//                             <a href="/c/pamtcsfl"><img src="/file/imgbank/umi92hxs/38o7q95p/8a4eb188363f79dc3cba72c768f9c4321101acb1_s.jpg" width="50" alt="Raiders Requiem"></a>
+//                         </td>
+//                     </tr>
+//                 </tbody>
+//             </table>
+//         </div>
+//     </div>
+
+
+//     `;
+
+//     EXCUTE_CASE1(toAnalizate)
+//         // console.log(dataraw);
+
+//     // let cards_raw = data.data.slice(data.data.indexOf("update_list"), data.data.indexOf("title_top_msg"));
+//     // console.log(cards_raw.length);
+
+
+//     // const card_data = [];
+//     // let br = 0;
+
+
+//     // // for (let i = 0; i < 3; i++) {
+//     // //     const start = cards_raw.indexOf("t_row");
+//     // //     const end = cards_raw.indexOf("<!-- .t_row-->") + "<!-- .t_row-->".length;
+//     // //     card_data.push(cards_raw.slice(start, end))
+//     // //     cards_raw = cards_raw.slice(end);
+
+//     // //     console.log(start, end);
+
+//     // // }
+
+//     // do {
+//     //     br++
+//     //     const start = cards_raw.indexOf("t_row");
+//     //     const end = cards_raw.indexOf("<!-- .t_row-->") + "<!-- .t_row-->".length;
+//     //     if (start == -1 || end == -1) {
+//     //         break;
+//     //     }
+//     //     card_data.push(cards_raw.slice(start, end))
+//     //     cards_raw = cards_raw.slice(end);
+
+
+//     // } while (br < 300000);
+
+//     // for (let i = 0; i < card_data.length; i++) {
+//     //     const cdr = card_data[i];
+//     //     const start = cdr.indexOf('<input type="hidden"');
+
+
+
+//     //     let input = (cdr.slice(start));
+//     //     input = input.slice(0, input.indexOf('</div>'));
+//     //     input = input.slice(input.indexOf("value=") + "value=".length, input.indexOf(">"))
+//     //     console.log(input);
+
+//     // }
+
+
+
+
+// })()
+
+
+
+
+
+
+
+
+
+
+
+// // Acceder al objeto `document`
+// const document = dom.window.document;
+
+// // Manipular el HTML
+// const h3Element = document.querySelector('h3');
+// h3Element.textContent = '¡Hola, mundo!'; // Cambiar el texto dentro del <h3>
+
+// const pElement = document.querySelector('p');
+// pElement.innerHTML += ' ¡Nuevo párrafo agregado!'; // Añadir texto al <p>
+
+// // Obtener el HTML modificado
+// const updatedHtml = dom.serialize();
+// console.log(typeof updatedHtml);
+// // Imprime: <html><head></head><body><div><h3>¡Hola, mundo!</h3><p>Texto de ejemplo. ¡Nuevo párrafo agregado!</p></div></body></html>
