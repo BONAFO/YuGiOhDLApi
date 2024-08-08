@@ -1,0 +1,1590 @@
+[{
+        "pack": "Borrelsword Slash",
+        "name": "Borrelsword Dragon",
+        "rarity": "UR",
+        "id": 0,
+        "fn": "Borrelsword_Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/2/2f/BorrelswordDragon-BLC1-EN-UR-1E.png/revision/latest/?cb=20240518051119",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Dragon ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Top , Left , Bottom-Left , Bottom",
+        "stats": [
+            3000,
+            4
+        ],
+        "description": "3+ Effect MonstersCannot be destroyed by battle. Once per turn (Quick Effect): You can target 1 Attack Position monster; change it to Defense Position, also, this card can make a second attack during each Battle Phase this turn. Your opponent cannot activate cards or effects in response to this effect's activation. Once per turn, when this card declares an attack on a face-up monster: You can activate this effect; until the end of this turn, this card gains ATK equal to half that monster's current ATK, and if it does, that monster's current ATK is halved."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Cyberse Sage",
+        "rarity": "UR",
+        "id": 1,
+        "fn": "Cyberse_Sage",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/63/CyberseSage-CYAC-EN-C-1E.png/revision/latest/?cb=20230505194335",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Cyberse ",
+            " Ritual ",
+            " Tuner ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            0,
+            0
+        ],
+        "description": "You can Ritual Summon this card with \"Cynet Ritual\". During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, by banishing materials mentioned on it from your field or GY, including a Cyberse monster. If this card is sent to the GY as Synchro Material: You can target 1 Cyberse monster or 1 Ritual Spell in your GY; add it to your hand. You can only use each effect of \"Cyberse Sage\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Double Disruptor Dragon",
+        "rarity": "UR",
+        "id": 2,
+        "fn": "Double_Disruptor Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/60/DoubleDisruptorDragon-BODE-EN-SR-1E.png/revision/latest/?cb=20240319010219",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Dragon ",
+            " Effect"
+        ],
+        "level": 8,
+        "stats": [
+            2500,
+            1500
+        ],
+        "description": "You can Tribute this card, then target 2 \"Rokket\" monsters in your GY with different names; Special Summon them in Defense Position. You can banish this card from your GY; add 1 \"Rapid Trigger\" or \"Heavy Interlock\" from your Deck or GY to your hand. You can only use each effect of \"Double Disruptor Dragon\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight - Renaud",
+        "rarity": "UR",
+        "id": 3,
+        "fn": "Infernoble_Knight - Renaud",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/8/83/InfernobleKnightRenaud-AMDE-EN-SR-1E.png/revision/latest/?cb=20230130034120",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            500,
+            200
+        ],
+        "description": "If you control a FIRE Warrior monster, you can Special Summon this card (from your hand). If Summoned this way, treat this card as a Tuner. You can only Special Summon \"Infernoble Knight - Renaud\" once per turn this way. If this card is Special Summoned: You can target 1 of your FIRE Warrior monsters, or 1 of your Equip Spells, that is banished or in your GY, except \"Infernoble Knight - Renaud\"; add it to your hand. You can only use this effect of \"Infernoble Knight - Renaud\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "The Agent of Life - Neptune",
+        "rarity": "UR",
+        "id": 4,
+        "fn": "The_Agent of Life - Neptune",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/6a/TheAgentofLifeNeptune-GFP2-EN-UR-1E.png/revision/latest/?cb=20220518015442",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Fairy ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            0,
+            600
+        ],
+        "description": "You can discard this card; Special Summon 1 \"The Agent\" monster from your hand or GY, except \"The Agent of Life - Neptune\", or, if \"The Sanctuary in the Sky\" is on the field or in either GY, you can Special Summon 1 \"Hyperion\" monster instead. Neither player can Tribute a monster Summoned with this effect, until the end of your opponent's turn. If this card is banished: You can add 1 \"The Sanctuary in the Sky\" from your Deck to your hand. You can only use each effect of \"The Agent of Life - Neptune\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Traptrix Myrmeleo",
+        "rarity": "UR",
+        "id": 5,
+        "fn": "Traptrix_Myrmeleo",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/75/TraptrixMyrmeleo-SDBT-EN-C-1E.png/revision/latest/?cb=20230505004632",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Insect ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1600,
+            1200
+        ],
+        "description": "Unaffected by the effects of \"Hole\" Normal Traps. When this card is Normal Summoned: You can add 1 \"Hole\" Normal Trap from your Deck to your hand. If this card is Special Summoned: Target 1 Spell/Trap your opponent controls; destroy that target."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Lonefire Blossom",
+        "rarity": "UR",
+        "id": 6,
+        "fn": "Lonefire_Blossom",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/8/87/LonefireBlossom-SDBT-EN-C-1E.png/revision/latest/?cb=20230505005301",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            500,
+            1400
+        ],
+        "description": "Once per turn: You can Tribute 1 face-up Plant monster; Special Summon 1 Plant monster from your Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Heritage of the Chalice",
+        "rarity": "UR",
+        "id": 7,
+        "fn": "Heritage_of the Chalice",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/61/HeritageoftheChalice-MP19-EN-PScR-1E.png/revision/latest/?cb=20200121215541",
+        "type": "Spell",
+        "types": "Normal",
+        "description": "Add 1 \"Noble Knight\" monster or 1 \"Noble Arms\" card from your Deck or GY to your hand. If your \"Noble Knight\" monster equipped with a \"Noble Arms\" Equip Spell is destroyed by battle and sent to the GY, while this card is in your GY: You can add this card to your hand. You can only use 1 \"Heritage of the Chalice\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Photon Sanctuary",
+        "rarity": "UR",
+        "id": 8,
+        "fn": "Photon_Sanctuary",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/9/97/PhotonSanctuary-BP02-EN-C-1E.png/revision/latest/?cb=20130705174921",
+        "type": "Spell",
+        "types": "Normal",
+        "description": "Special Summon 2 \"Photon Tokens\" (Thunder-Type/LIGHT/Level 4/ATK 2000/DEF 0) in Defense Position. These Tokens cannot attack or be used as Synchro Material Monsters. You cannot Summon other monsters the turn you activate this card, except for LIGHT monsters."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunavalon Dryatrentiay",
+        "rarity": "SR",
+        "id": 9,
+        "fn": "Sunavalon_Dryatrentiay",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/55/SunavalonDryatrentiay-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144443",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Bottom-Left , Bottom , Bottom-Right , Top",
+        "stats": [
+            0,
+            4
+        ],
+        "description": "2+ Link MonstersIf this card is Link Summoned: You can add 1 \"Sunavalon\" Spell/Trap from your Deck to your hand. This card cannot be destroyed by your opponent's card effects, and cannot be targeted for attacks, but does not prevent your opponent from attacking you directly. Once per turn: You can Tribute 1 Link Monster this card points to; destroy any number of cards your opponent controls, up to that monster's Link Rating."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Underclock Taker",
+        "rarity": "SR",
+        "id": 10,
+        "fn": "Underclock_Taker",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/0/07/UnderclockTaker-OP08-EN-SR-UE.png/revision/latest/?cb=20180823205356",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Cyberse ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Left , Bottom",
+        "stats": [
+            1000,
+            2
+        ],
+        "description": "2 Effect MonstersOnce per turn: You can target 1 face-up monster this card points to and 1 face-up monster your opponent controls; the opponent's target loses ATK equal to the ATK of the target this monster points to, until the end of this turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Benghalancer the Resurgent",
+        "rarity": "SR",
+        "id": 11,
+        "fn": "Benghalancer_the Resurgent",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/6c/BenghalancertheResurgent-LIOV-EN-ScR-1E.png/revision/latest/?cb=20210702151947",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Plant ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Left , Bottom , Right , Top",
+        "stats": [
+            2500,
+            4
+        ],
+        "description": "2+ Plant monstersDuring the Main Phase (Quick Effect): You can target 1 Effect Monster your opponent controls; take damage equal to its ATK, and if you did take damage, return it to the hand. If this card is in your GY: You can banish 2 or more Link Monsters from your GY whose combined Link Ratings equal exactly 4; Special Summon this card, but banish it when it leaves the field. You can only use 1 \"Benghalancer the Resurgent\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight Emperor Charles",
+        "rarity": "SR",
+        "id": 12,
+        "fn": "Infernoble_Knight Emperor Charles",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/9/90/InfernobleKnightEmperorCharles-ROTD-EN-UR-1E.png/revision/latest/?cb=20200811160508",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Synchro ",
+            " Effect"
+        ],
+        "level": 9,
+        "stats": [
+            3000,
+            200
+        ],
+        "description": "1 Tuner + 1+ non-Tuner monstersIf an Equip Card becomes equipped to a monster on the field, even during the Damage Step: You can destroy 1 card on the field. During the End Phase: You can equip 1 Equip Spell from your hand or GY to this card, then you can equip 1 FIRE Warrior monster from your Deck to this card as an Equip Spell that gives it 500 ATK. You can only use each effect of \"Infernoble Knight Emperor Charles\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "El Shaddoll Shekhinaga",
+        "rarity": "SR",
+        "id": 13,
+        "fn": "El_Shaddoll Shekhinaga",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/72/ElShaddollShekhinaga-SDSH-EN-SR-1E.png/revision/latest/?cb=20200219172340",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Machine ",
+            " Fusion ",
+            " Effect"
+        ],
+        "level": 10,
+        "stats": [
+            2600,
+            3000
+        ],
+        "description": "1 \"Shaddoll\" monster + 1 EARTH monsterMust first be Fusion Summoned. When a Special Summoned monster activates its effect while you have a \"Shaddoll\" card in your hand (Quick Effect): You can negate the activation, and if you do, destroy that monster, then send 1 \"Shaddoll\" card from your hand to the GY. You can only use this effect of \"El Shaddoll Shekhinaga\" once per turn. If this card is sent to the GY: You can target 1 \"Shaddoll\" Spell/Trap in your GY; add it to your hand."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Borreload Riot Dragon",
+        "rarity": "SR",
+        "id": 14,
+        "fn": "Borreload_Riot Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/b/b3/BorreloadRiotDragon-BODE-EN-UR-1E.png/revision/latest/?cb=20220125132033",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Dragon ",
+            " Ritual ",
+            " Effect"
+        ],
+        "level": 8,
+        "stats": [
+            3000,
+            2500
+        ],
+        "description": "You can Ritual Summon this card with \"Heavy Interlock\". When your opponent Special Summons a monster(s) (Quick Effect): You can negate the Special Summon, and if you do, destroy that monster(s), then destroy this card or 1 \"Rokket\" monster you control. If this card is in your GY: You can target 1 \"Borrel\" or \"Rokket\" monster in your GY; destroy 1 card in you control or in your hand, and if you do, add that target to your hand. You can only use each effect of \"Borreload Riot Dragon\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Majesty Hyperion",
+        "rarity": "SR",
+        "id": 15,
+        "fn": "Majesty_Hyperion",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/8/86/MajestyHyperion-GFP2-EN-UR-1E.png/revision/latest/?cb=20220518015301",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Fairy ",
+            " Effect"
+        ],
+        "level": 8,
+        "stats": [
+            2100,
+            2700
+        ],
+        "description": "You can Special Summon this card (from your hand or GY) by banishing 1 \"The Agent\" monster from your hand, field, or GY. You can only Special Summon \"Majesty Hyperion\" once per turn this way. Any battle damage you take from battles involving your Fairy monsters is also inflicted to your opponent. Once per turn: You can banish 1 Fairy monster from your hand or GY, then target 1 card in either GY; banish it. If \"The Sanctuary in the Sky\" is on the field or in either GY, you can use this effect up to twice per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Traptrix Mantis",
+        "rarity": "SR",
+        "id": 16,
+        "fn": "Traptrix_Mantis",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/77/TraptrixMantis-SDBT-EN-C-1E.png/revision/latest/?cb=20230505011243",
+        "level": null,
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Insect ",
+            " Effect"
+        ],
+        "stats": [
+            1500,
+            1300
+        ],
+        "description": "Unaffected by the effects of \"Hole\" Normal Traps. When this card is Normal Summoned: You can add 1 \"Traptrix\" monster from your Deck to your hand. Once per turn (Quick Effect): You can target 1 Set Spell/Trap you control; return that target to the hand, then you can Set 1 Spell/Trap from your hand."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunvine Sowing",
+        "rarity": "SR",
+        "id": 17,
+        "fn": "Sunvine_Sowing",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/0/0c/SunvineSowing-BODE-EN-SR-1E.png/revision/latest/?cb=20220125132911",
+        "type": "Spell",
+        "types": "Normal",
+        "description": "Special Summon 1 \"Sunseed\" monster from your Deck, and if you do, take 1000 damage. If you control no \"Sunavalon\" Link Monsters, you can only Special Summon \"Sunseed Genius Loci\" with this effect. For the rest of this turn after this card resolves, you cannot Special Summon monsters from the Extra Deck, except Plant monsters. If a Plant Link Monster(s) you control would be destroyed by battle or an opponent's card effect, you can banish this card from your GY instead. You can only activate 1 \"Sunvine Sowing\" per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "The Sacred Waters in the Sky",
+        "rarity": "SR",
+        "id": 18,
+        "fn": "The_Sacred Waters in the Sky",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/5b/TheSacredWatersintheSky-GFP2-EN-UR-1E.png/revision/latest/?cb=20220518021839",
+        "type": "Spell",
+        "types": "Normal",
+        "description": "Activate 1 \"The Sanctuary in the Sky\" directly from your Deck, or add 1 monster that mentions \"The Sanctuary in the Sky\" from your Deck to your hand, then, if \"The Sanctuary in the Sky\" is on the field or in either GY, you can gain 500 LP for each \"Hyperion\" and \"The Agent\" monster you control. If your monster that mentions \"The Sanctuary in the Sky\" would be destroyed by battle, you can banish this card from your GY instead. You can only use each effect of \"The Sacred Waters in the Sky\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Court of Cards",
+        "rarity": "SR",
+        "id": 19,
+        "fn": "Court_of Cards",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/b/bc/CourtofCards-KICO-EN-SR-1E.png/revision/latest/?cb=20210821232601",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "If you control no monsters, or only control \"Queen's Knight\", \"King's Knight\", and/or \"Jack's Knight\": You can Special Summon 1 \"Queen's Knight\", \"King's Knight\", or \"Jack's Knight\" from your hand or GY. You can banish up to 1 each \"Queen's Knight\", \"King's Knight\", and/or \"Jack's Knight\" from your hand and/or GY; draw the same number of cards you banished. You can only use 1 \"Court of Cards\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Doublebyte Dragon",
+        "rarity": "R",
+        "id": 20,
+        "fn": "Doublebyte_Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/5d/DoublebyteDragon-DUPO-EN-UR-1E.png/revision/latest/?cb=20200830155132",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Cyberse ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Top , Bottom",
+        "stats": [
+            1500,
+            2
+        ],
+        "description": "2 Link MonstersGains ATK equal to the combined Link Ratings of the monsters used for its Link Summon x 300. Unaffected by monster effects, except Link Monsters' effects, and cannot be destroyed by battle, except by battle with a Link Monster."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Flash Charge Dragon",
+        "rarity": "R",
+        "id": 21,
+        "fn": "Flash_Charge Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/55/FlashChargeDragon-BLRR-EN-ScR-1E.png/revision/latest/?cb=20180628233922",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Dragon ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Top-Left , Top , Top-Right",
+        "stats": [
+            2300,
+            3
+        ],
+        "description": "2+ Dragon monstersYou cannot Summon/Set monsters to a zone this card points to. Once per turn, if a monster(s) is Normal or Special Summoned, to a zone(s) this card points to (except during the Damage Step): You can destroy 1 monster this card points to, and if you do, inflict 500 damage to your opponent. When a card or effect is activated that targets this face-up card (Quick Effect): You can Tribute 1 monster; negate the activation."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Protector of the Agents - Moon",
+        "rarity": "R",
+        "id": 22,
+        "fn": "Protector_of the Agents - Moon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e3/ProtectoroftheAgentsMoon-GFP2-EN-UR-1E.png/revision/latest/?cb=20220518021554",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Fairy ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Right , Bottom-Right",
+        "stats": [
+            1800,
+            2
+        ],
+        "description": "2 Fairy monstersIf this card is Link Summoned: You can send 1 \"The Sanctuary in the Sky\" or 1 card that mentions it from your Deck to the GY, or if \"The Sanctuary in the Sky\" is on the field or in either GY, you can add 1 \"The Agent of Mystery - Earth\" from your Deck or GY to your hand instead. You can Tribute 1 Fairy monster, then target 1 card your opponent controls; destroy it. You can only use each effect of \"Protector of The Agents - Moon\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Traptrix Allomerus",
+        "rarity": "R",
+        "id": 23,
+        "fn": "Traptrix_Allomerus",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e7/TraptrixAllomerus-MP21-EN-SR-1E.png/revision/latest/?cb=20211223152631",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Insect ",
+            " Xyz ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            2200,
+            600
+        ],
+        "description": "2+ Level 4 monstersThis card is unaffected by Trap effects while it has Xyz Material. You can only use each of the following effects of \"Traptrix Allomerus\" once per turn.● You can detach 2 materials from this card; Special Summon 1 Level 4 Insect or Plant monster from your GY.● If an opponent's monster(s) leaves the field because of your card effect, and is now in the GY or banished (except during the Damage Step): You can detach 1 material from this card, then target 1 of them; Special Summon it to your field."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight Captain Roland",
+        "rarity": "R",
+        "id": 24,
+        "fn": "Infernoble_Knight Captain Roland",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/2/2b/InfernobleKnightCaptainRoland-ROTD-EN-C-1E.png/revision/latest/?cb=20200811160408",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Synchro ",
+            " Tuner ",
+            " Effect"
+        ],
+        "level": 5,
+        "stats": [
+            2000,
+            500
+        ],
+        "description": "1 Tuner + 1+ non-Tuner monstersIf this card is Synchro Summoned: You can activate this effect; during the End Phase of this turn, send 1 Equip Spell from your Deck to the GY, then add 1 Warrior monster from your Deck to your hand. During the Main Phase, if this card is in your GY (Quick Effect): You can target 1 Warrior monster you control; equip this card to that monster you control as an Equip Spell that gives it 500 ATK. You can only use each effect of \"Infernoble Knight Captain Roland\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "The Executor of the Underworld - Pluto",
+        "rarity": "R",
+        "id": 25,
+        "fn": "The_Executor of the Underworld - Pluto",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/68/TheExecutoroftheUnderworldPluto-GFP2-EN-UR-1E.png/revision/latest/?cb=20220518015546",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Fairy ",
+            " Synchro ",
+            " Tuner ",
+            " Effect"
+        ],
+        "level": 5,
+        "stats": [
+            2300,
+            0
+        ],
+        "description": "1 Tuner + 1+ non-Tuner monsters(This card is always treated as a \"The Agent\" card.)Once per turn: You can banish 1 monster from your GY, then target 1 Effect Monster on the field; change it to face-down Defense Position. This is a Quick Effect if \"The Sanctuary in the Sky\" is on the field or in either GY. You can banish this card from your GY; add 1 \"The Sanctuary in the Sky\" from your Deck or GY to your hand. You can only use this effect of \"The Executor of the Underworld - Pluto\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Exploderokket Dragon",
+        "rarity": "R",
+        "id": 26,
+        "fn": "Exploderokket_Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/c8/ExploderokketDragon-SDRR-EN-C-1E.png/revision/latest/?cb=20230814123452",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Dragon ",
+            " Effect"
+        ],
+        "level": 7,
+        "stats": [
+            2000,
+            2000
+        ],
+        "description": "When a Link Monster's effect is activated that targets this face-up card on the field (Quick Effect): You can destroy this card, then each player takes 2000 damage. During the End Phase, if this card is in the GY because it was destroyed on the field by battle or card effect and sent there this turn: You can Special Summon 1 \"Rokket\" monster from your Deck, except \"Exploderokket Dragon\". You can only use each effect of \"Exploderokket Dragon\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunvine Maiden",
+        "rarity": "R",
+        "id": 27,
+        "fn": "Sunvine_Maiden",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/b/b4/SunvineMaiden-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144658",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            0,
+            0
+        ],
+        "description": "When your opponent activates a card or effect that targets a Plant monster(s) you control that was Special Summoned from the Extra Deck (Quick Effect): You can Special Summon this card from your hand, and if you do, negate that effect. You can only use this effect of \"Sunvine Maiden\" once per turn. Your opponent cannot target \"Sunavalon\" or \"Sunvine\" Spells/Traps you control with card effects."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunseed Shadow",
+        "rarity": "R",
+        "id": 28,
+        "fn": "Sunseed_Shadow",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/3c/SunseedShadow-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144530",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            0,
+            400
+        ],
+        "description": "If you control a Plant Normal Monster: You can Special Summon this card from your hand. You can banish this card from your GY, then target 1 linked Link-2 or lower \"Sunavalon\" or \"Sunvine\" monster you control; Special Summon 1 monster with the same name from your Extra Deck, but negate its effects, also you cannot Special Summon for the rest of this turn, except Plant monsters. You can only use each effect of \"Sunseed Shadow\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunseed Twin",
+        "rarity": "R",
+        "id": 29,
+        "fn": "Sunseed_Twin",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/7c/SunseedTwin-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144548",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 2,
+        "stats": [
+            0,
+            800
+        ],
+        "description": "If this card is Normal or Special Summoned while you control a \"Sunavalon\" Link Monster: You can target 1 Level 4 or lower Plant Normal Monster in your GY; Special Summon it. You can banish this card in your GY and 1 Link Monster you control; if you have 2 or more Plant Link Monsters with the same name as each other in your GY, Special Summon 1 of them. You can only use each effect of \"Sunseed Twin\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight Astolfo",
+        "rarity": "R",
+        "id": 30,
+        "fn": "Infernoble_Knight Astolfo",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/b/bf/InfernobleKnightAstolfo-ROTD-EN-C-1E.png/revision/latest/?cb=20200811160337",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            500,
+            200
+        ],
+        "description": "You can banish 1 FIRE Warrior monster from your hand or GY; Special Summon this card from your hand, then you can make this card's Level become the Level of that banished monster. You can banish this card from your GY; Special Summon this banished card during your second Standby Phase after this effect's activation, then you can Special Summon 1 of your FIRE Warrior monsters that is banished or in your GY. You can only use each effect of \"Infernoble Knight Astolfo\" once per Duel."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight Ogier",
+        "rarity": "R",
+        "id": 31,
+        "fn": "Infernoble_Knight Ogier",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/c0/InfernobleKnightOgier-ROTD-EN-SR-1E.png/revision/latest/?cb=20200811160544",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1500,
+            2000
+        ],
+        "description": "While this card is an Equip Card, the equipped monster cannot be destroyed by card effects. You can only use each of the following effects of \"Infernoble Knight Ogier\" once per turn. If this card is Normal or Special Summoned: You can send 1 \"Noble Arms\" card, or 1 FIRE Warrior monster except \"Infernoble Knight Ogier\", from your Deck to the GY. If this card is in your GY: You can target 1 Warrior monster you control; equip this card to that monster you control."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Traptrix Nepenthes",
+        "rarity": "R",
+        "id": 32,
+        "fn": "Traptrix_Nepenthes",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/5e/TraptrixNepenthes-PGL2-EN-GUR-1E.png/revision/latest/?cb=20150320150054",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            800,
+            2000
+        ],
+        "description": "Unaffected by the effects of \"Hole\" Normal Traps. If you activate a \"Hole\" Normal Trap Card (except during the Damage Step): You can add to your hand, or Special Summon, 1 \"Traptrix\" monster from your Deck, except \"Traptrix Nepenthes\". You can only use this effect of \"Traptrix Nepenthes\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Traptrix Genlisea",
+        "rarity": "R",
+        "id": 33,
+        "fn": "Traptrix_Genlisea",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/9/9c/TraptrixGenlisea-SDBT-EN-C-1E.png/revision/latest/?cb=20230505004900",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1200,
+            1600
+        ],
+        "description": "Unaffected by the effects of \"Hole\" Normal Traps. You can Tribute this card; Set 2 \"Hole\" Normal Traps with different names, 1 from your Deck and 1 from your GY, but banish them when they leave the field. You can only use this effect of \"Traptrix Genlisea\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Fire Flint Lady",
+        "rarity": "R",
+        "id": 34,
+        "fn": "Fire_Flint Lady",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/4/4d/FireFlintLady-BLAR-EN-UR-1E.png/revision/latest/?cb=20200725181640",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            100,
+            100
+        ],
+        "description": "If you control a Warrior monster: You can Special Summon this card from your hand. You can send this card from the field to the GY; Special Summon 1 Level 4 or lower Warrior monster from your hand, and if you do, your opponent cannot target it with card effects this turn. You can only use each effect of \"Fire Flint Lady\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "\"Infernoble Arms - Durendal\"",
+        "rarity": "R",
+        "id": 35,
+        "fn": "Infernoble_Arms - Durendal",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/6f/InfernobleArmsDurendal-AMDE-EN-R-1E.png/revision/latest/?cb=20230130034736",
+        "type": "Spell",
+        "types": "Equip",
+        "description": "While this card is equipped to a monster: You can add 1 Level 5 or lower FIRE Warrior monster from your Deck to your hand, then destroy this card. If this card is sent to the GY because the equipped monster is sent to the GY: You can target 1 Level 5 or lower FIRE Warrior monster in your GY; Special Summon it, also you cannot Special Summon monsters for the rest of this turn, except Warrior monsters. You can only use 1 \"\"Infernoble Arms - Durendal\"\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Noble Arms - Excaliburn",
+        "rarity": "R",
+        "id": 36,
+        "fn": "Noble_Arms - Excaliburn",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/30/NobleArmsExcaliburn-NKRT-EN-PlR-LE.png/revision/latest/?cb=20141120210959",
+        "type": "Spell",
+        "types": "Equip",
+        "description": "Equip only to a \"Noble Knight\" monster. It cannot be targeted by an opponent's card effects. During your turn, except the turn this card was sent to the Graveyard: You can banish this card from your Graveyard, then target 1 \"Noble Knight\" Xyz Monster you control; Special Summon from your Extra Deck, 1 \"Noble Knight\" Xyz Monster with a different name, by using that target as the Xyz Material. (This Special Summon is treated as an Xyz Summon. Xyz Materials attached to it also become Xyz Materials on the Summoned monster.) You can only use this effect of \"Noble Arms - Excaliburn\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunavalon Dryades",
+        "rarity": "N",
+        "id": 37,
+        "fn": "Sunavalon_Dryades",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/1/13/SunavalonDryades-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144331",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Bottom-Left , Bottom-Right",
+        "stats": [
+            0,
+            2
+        ],
+        "description": "2 Plant monsters, including a \"Sunavalon\" Link MonsterThis card cannot be targeted for attacks, but does not prevent your opponent from attacking you directly. Twice per turn, if you take battle or effect damage: You can gain that much LP, and if you do, Special Summon 1 \"Sunvine\" monster from your Extra Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunavalon Dryanome",
+        "rarity": "N",
+        "id": 38,
+        "fn": "Sunavalon_Dryanome",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/8/8f/SunavalonDryanome-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144353",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Bottom-Left , Bottom , Bottom-Right",
+        "stats": [
+            0,
+            3
+        ],
+        "description": "2+ Plant monstersThis card cannot be targeted for attacks, but does not prevent your opponent from attacking you directly. Three times per turn, if you take battle or effect damage: You can gain that much LP, and if you do, Special Summon 1 \"Sunvine\" monster from your Extra Deck. Once per turn, when a monster this card points to is targeted for an attack: You can negate the attack, and if you do, move that monster you control to another of your Main Monster Zones."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunvine Gardna",
+        "rarity": "N",
+        "id": 39,
+        "fn": "Sunvine_Gardna",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/30/SunvineGardna-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144606",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Top",
+        "stats": [
+            600,
+            1
+        ],
+        "description": "1 Plant Normal MonsterIf a \"Sunavalon\" Link Monster you control leaves the field by card effect: Destroy this card. When an attack is declared involving this card, linked to a \"Sunavalon\" Link Monster, and an opponent's monster: You can activate this effect; the damage you take from that battle is halved. When this card is destroyed by battle: End the Battle Phase after the Damage Step."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunvine Healer",
+        "rarity": "N",
+        "id": 40,
+        "fn": "Sunvine_Healer",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e6/SunvineHealer-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144637",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Top",
+        "stats": [
+            600,
+            1
+        ],
+        "description": "1 Plant Normal MonsterIf a \"Sunavalon\" Link Monster you control leaves the field by card effect: Destroy this card. If this card is Special Summoned: You can target 1 \"Sunavalon\" Link Monster on the field; gain LP equal to its Link Rating x 300. When your Plant Link Monster inflicts battle damage to your opponent: You can gain 600 LP."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Celestial Knightlord Parshath",
+        "rarity": "N",
+        "id": 41,
+        "fn": "Celestial_Knightlord Parshath",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/3b/CelestialKnightlordParshath-DUOV-EN-UR-1E.png/revision/latest/?cb=20200321155858",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Fairy ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Bottom-Left , Bottom , Bottom-Right",
+        "stats": [
+            2400,
+            3
+        ],
+        "description": "2+ Fairy monstersYou can discard 1 card; add 1 \"The Sanctuary in the Sky\", or 1 card that specifically lists \"The Sanctuary in the Sky\" in its text, from your Deck to your hand, or, if \"The Sanctuary in the Sky\" is on the field, you can add 1 Fairy monster instead. If another face-up Fairy monster you control is sent to the GY (except during the Damage Step): You can banish 1 Fairy monster from your GY; Special Summon 1 Fairy monster from your hand whose Level is higher than that banished monster's. You can only use each effect of \"Celestial Knightlord Parshath\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Meliae of the Trees",
+        "rarity": "N",
+        "id": 42,
+        "fn": "Meliae_of the Trees",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e9/MeliaeoftheTrees-MP14-EN-ScR-1E.png/revision/latest/?cb=20140908002606",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Xyz ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            1700,
+            900
+        ],
+        "description": "2 Level 3 EARTH monstersOnce per turn: You can detach 1 Xyz Material from this card, then activate 1 of these effects.● Send 1 Plant-Type monster from your Deck to the Graveyard.● Target 1 Plant-Type monster in your Graveyard; Special Summon that target in face-up Defense Position."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight Captain Oliver",
+        "rarity": "N",
+        "id": 43,
+        "fn": "Infernoble_Knight Captain Oliver",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/cc/InfernobleKnightCaptainOliver-PHRA-EN-SR-1E.png/revision/latest/?cb=20201113180758",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Synchro ",
+            " Effect"
+        ],
+        "level": 5,
+        "stats": [
+            2000,
+            500
+        ],
+        "description": "1 Tuner + 1+ non-Tuner monstersWhen this card declares an attack while equipped: You can target 1 face-up card on the field; destroy it. During your Main Phase, except the turn this card was sent to the GY: You can target 1 Warrior monster you control; Special Summon this card from your GY as a Tuner, and if you do, equip that monster you control to this card as an Equip Spell that gives it 500 ATK. You can only use this effect of \"Infernoble Knight Captain Oliver\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Chobham Armor Dragon",
+        "rarity": "N",
+        "id": 44,
+        "fn": "Chobham_Armor Dragon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/a/aa/ChobhamArmorDragon-CHIM-EN-C-1E.png/revision/latest/?cb=20191115041559",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Dragon ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            0,
+            0
+        ],
+        "description": "When an opponent's monster declares a direct attack: You can Special Summon this card from your hand in Attack Position, and if you do, this turn, this card cannot be destroyed by battle, also any battle damage you take from attacks involving this card is halved. If this card is sent to the GY as Link Material: You can target 1 other DARK monster in your GY; add it to your hand, also your opponent can add 1 monster from their GY to their hand. You can only use this effect of \"Chobham Armor Dragon\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Infernoble Knight Maugis",
+        "rarity": "N",
+        "id": 45,
+        "fn": "Infernoble_Knight Maugis",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/f/fb/InfernobleKnightMaugis-ROTD-EN-C-1E.png/revision/latest/?cb=20200811160525",
+        "type": "Monster",
+        "attibute": "FIRE",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1500,
+            1000
+        ],
+        "description": "While this card is an Equip Card, the equipped monster cannot be destroyed by battle. You can only use each of the following effects of \"Infernoble Knight Maugis\" once per turn. If this card is sent to the GY: You can shuffle into the Deck, 3 of your other FIRE Warrior monsters and/or \"Noble Arms\" cards that are banished or in your GY; draw 1 card. If this card is in your GY: You can target 1 Warrior monster you control; equip this card to that monster you control."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "The Agent of Destruction - Venus",
+        "rarity": "N",
+        "id": 46,
+        "fn": "The_Agent of Destruction - Venus",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/1/14/TheAgentofDestructionVenus-BACH-EN-C-1E.png/revision/latest/?cb=20220217194500",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Fairy ",
+            " Tuner ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            0,
+            1600
+        ],
+        "description": "You can banish 1 \"The Agent of Creation - Venus\" from your GY; Special Summon this card from your hand. You can pay LP in multiples of 500, then for every 500 LP paid, target 1 of your \"Mystical Shine Ball\" that is banished or in your GY; Special Summon them, but place them on the bottom of the Deck when they leave the field. You can only use 1 \"The Agent of Destruction - Venus\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Nehshaddoll Genius",
+        "rarity": "N",
+        "id": 47,
+        "fn": "Nehshaddoll_Genius",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/a/ab/NehshaddollGenius-GFTP-EN-UR-1E.png/revision/latest/?cb=20210420180653",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Machine ",
+            " Flip ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1800,
+            1000
+        ],
+        "description": "FLIP: You can target 1 \"Shaddoll\" monster you control; that face-up monster is unaffected by monster effects this turn, except its own.If this card is sent to the GY by card effect: You can target 1 Effect Monster on the field; neither player can activate that target's effects on the field this turn. You can only use 1 \"Nehshaddoll Genius\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Traptrix Vesiculo",
+        "rarity": "N",
+        "id": 48,
+        "fn": "Traptrix_Vesiculo",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/35/TraptrixVesiculo-SDBT-EN-C-1E.png/revision/latest/?cb=20230505004913",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1400,
+            1400
+        ],
+        "description": "Unaffected by the effects of \"Hole\" Normal Traps. You can only use 1 of the following effects of \"Traptrix Vesiculo\" per turn, and only once that turn. You can send 1 Set Trap you control to the GY; Special Summon this card from your hand. If you control no cards in your Spell & Trap Zone: You can banish this card from your GY, then target 1 \"Hole\" Normal Trap in your GY; Set it to your field."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Trias Hierarchia",
+        "rarity": "N",
+        "id": 49,
+        "fn": "Trias_Hierarchia",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/a/a7/TriasHierarchia-MP21-EN-UR-1E.png/revision/latest/?cb=20211030233649",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Fairy ",
+            " Effect"
+        ],
+        "level": 9,
+        "stats": [
+            1900,
+            2900
+        ],
+        "description": "During the Main Phase, if this card is in your hand or GY (Quick Effect): You can Tribute up to 3 Fairy monsters; Special Summon this card (but banish it when it leaves the field), then, you can apply the following effect(s) in sequence, depending on the number of Tributed monsters.● 2+: Destroy 1 card your opponent controls.● 3: Draw 2 cards.You can only use this effect of \"Trias Hierarchia\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Lindbloom",
+        "rarity": "N",
+        "id": 50,
+        "fn": "Lindbloom",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/0/0f/Lindbloom-MP15-EN-C-1E.png/revision/latest/?cb=20150920224846",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Wyrm ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            0,
+            1800
+        ],
+        "description": "If a monster you control battles an opponent's monster, during damage calculation: The ATK of each monster in that battle becomes equal to their current DEF, until the end of the Damage Step."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Thunderclap Skywolf",
+        "rarity": "N",
+        "id": 51,
+        "fn": "Thunderclap_Skywolf",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/0/04/ThunderclapSkywolf-SECE-EN-SR-LE.png/revision/latest/?cb=20150227173510",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Thunder ",
+            " Effect"
+        ],
+        "level": 7,
+        "stats": [
+            2500,
+            2000
+        ],
+        "description": "If this card is Special Summoned from the Graveyard: You can destroy all face-up monsters your opponent controls. You cannot conduct your Battle Phase the turn you activate this effect."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Baobaboon",
+        "rarity": "N",
+        "id": 52,
+        "fn": "Baobaboon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e1/Baobaboon-MP18-EN-C-1E.png/revision/latest/?cb=20180901002256",
+        "type": "Monster",
+        "attibute": "DARK",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            1200,
+            1000
+        ],
+        "description": "If this card is Normal or Special Summoned: You can draw 1 card, then place 1 card from your hand on either the top or bottom of your Deck. If this card is destroyed by battle or card effect: You can Special Summon any number of “Baobaboon” from your Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Sunseed Genius Loci",
+        "rarity": "N",
+        "id": 53,
+        "fn": "Sunseed_Genius Loci",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/2/2b/SunseedGeniusLoci-GFTP-EN-UR-1E.png/revision/latest/?cb=20210421144506",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Normal"
+        ],
+        "level": 1,
+        "stats": [
+            0,
+            600
+        ],
+        "description": "This seed can only be harvested from the sacred tree once every thousand years, and will become the guardian spirit of its land after a thousand more."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Ancient Tree of Enlightenment",
+        "rarity": "N",
+        "id": 54,
+        "fn": "Ancient_Tree of Enlightenment",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/1/1b/AncientTreeofEnlightenment-SB-JP-C.png/revision/latest/?cb=20230715175202",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "level": 3,
+        "stats": [
+            600,
+            1500
+        ],
+        "description": "This ancient arbor uses its extensive knowledge to avoid the damage of enemy attacks."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Heavy Interlock",
+        "rarity": "N",
+        "id": 55,
+        "fn": "Heavy_Interlock",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/5a/HeavyInterlock-BODE-EN-SR-1E.png/revision/latest/?cb=20220125132312",
+        "type": "Spell",
+        "types": "Ritual",
+        "description": "This card is used to Ritual Summon \"Borreload Riot Dragon\". You must also Tribute monsters from your hand or field, and/or destroy \"Rokket\" monsters from your hand or face-up field, whose total Levels equal 8 or more. That monster Special Summoned by this effect cannot be destroyed by battle with a monster Special Summoned from the Extra Deck, and is unaffected by the activated effect of any monster Special Summoned from the Extra Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "\"Infernoble Arms - Hauteclere\"",
+        "rarity": "N",
+        "id": 56,
+        "fn": "Infernoble_Arms - Hauteclere",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/6/69/InfernobleArmsHauteclere-ROTD-EN-C-1E.png/revision/latest/?cb=20200811160227",
+        "type": "Spell",
+        "types": "Equip",
+        "description": "While this card is equipped to a monster: You can target 1 face-up monster you control; this turn, you cannot declare attacks, except with that monster, also it gains the ability this turn to make a second attack during each Battle Phase, then destroy this card. If this card is sent to the GY because the equipped monster is sent to the GY: You can target 1 face-up monster on the field; destroy it. You can only use 1 \"\"Infernoble Arms - Hauteclere\"\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "\"Infernoble Arms - Joyeuse\"",
+        "rarity": "N",
+        "id": 57,
+        "fn": "Infernoble_Arms - Joyeuse",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/77/InfernobleArmsJoyeuse-ROTD-EN-SR-1E.png/revision/latest/?cb=20200811160314",
+        "type": "Spell",
+        "types": "Equip",
+        "description": "While this card is equipped to a monster: You can target 1 FIRE Warrior monster in your GY; add it to your hand, then destroy this card. If this card is sent to the GY because the equipped monster is sent to the GY: You can Special Summon 1 FIRE Warrior monster from your hand. You can only use 1 \"\"Infernoble Arms - Joyeuse\"\" effect per turn, and only once that turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "The Chorus in the Sky",
+        "rarity": "N",
+        "id": 58,
+        "fn": "The_Chorus in the Sky",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/b/bd/TheChorusintheSky-GFP2-EN-UR-1E.png/revision/latest/?cb=20220518021711",
+        "type": "Spell",
+        "types": "Normal",
+        "description": "Pay 1000 LP, then target 1 Fairy monster in your GY; add it to your hand, then, if \"The Sanctuary in the Sky\" is on the field or in either GY, you can add 1 of your banished \"The Sanctuary in the Sky\", or 1 of your banished cards that mentions it, to your hand. You can only activate 1 \"The Chorus in the Sky\" per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Link Back",
+        "rarity": "N",
+        "id": 59,
+        "fn": "Link_Back",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/b/be/LinkBack-RIRA-EN-C-1E.png/revision/latest/?cb=20190811072524",
+        "type": "Spell",
+        "types": "Normal",
+        "description": "Target 1 Link Monster you control in the Extra Monster Zone; move that monster you control to your Main Monster Zone it points to, then, you can send cards from the top of your Deck to the GY equal to its Link Rating. You can only activate 1 \"Link Back\" per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Link Turret",
+        "rarity": "N",
+        "id": 60,
+        "fn": "Link_Turret",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/32/LinkTurret-MP19-EN-C-1E.png/revision/latest/?cb=20200121220322",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "When this card is activated: Place 4 counters on this card. Each time you take battle damage, place 1 counter on this card. During your Main Phase 2: You can remove 1 counter from this card, then target 1 \"Rokket\" monster in your GY; Special Summon it, but its effects are negated, also it is banished when it leaves the field. You cannot Special Summon monsters from your Extra Deck, except DARK Link Monsters, the turn you activate this effect (even if this card leaves the field).",
+        "attibute": "Card search categories\n\n  \nSupports \nDARK\nLink Monster\n\nArchetypes and series \nLink \n\nSupports archetypes \nRokket\n\nCounters \nCounter\nPlaces counters on itself\nRemoves counters from itself for cost\n\nMonster/Spell/Trap categories \nNegates the effects of your Effect Monsters\n\nSummoning categories \nSpecial Summons from your Graveyard\nRestricts the player's Special Summons from the Extra Deck\nRestricts the player's Special Summons to  specific monsters\n\nBanished categories \nBanishes other cards when they leave the field"
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Execute Protocols",
+        "rarity": "N",
+        "id": 61,
+        "fn": "Execute_Protocols",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/1/1b/ExecuteProtocols-SDRR-EN-C-1E.png/revision/latest/?cb=20230814133544",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "During each Battle Phase: You can banish 1 DARK Link Monster from your GY, then target 1 \"Borrel\" monster you control; until the end of this turn, it gains ATK equal to the ATK of the monster banished to activate this effect. You can only use this effect of \"Execute Protocols\" once per turn.",
+        "stats": []
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Break Off Trap Hole",
+        "rarity": "N",
+        "id": 62,
+        "fn": "Break_Off Trap Hole",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/d/dc/BreakOffTrapHole-MP18-EN-SR-1E.png/revision/latest/?cb=20180901002518",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "When a Link Monster is Link Summoned: Destroy all monsters on the field that are not linked."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Horn of Olifant",
+        "rarity": "N",
+        "id": 63,
+        "fn": "Horn_of Olifant",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/4/45/HornofOlifant-ROTD-EN-C-1E.png/revision/latest/?cb=20200811004404",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "Activate 1 of these effects;● Banish 1 Equip Spell you control or in your GY, then you can destroy 1 card on the field.● Destroy 1 \"Roland\" monster you control, then Special Summon in Defense Position up to 3 FIRE Warrior monsters from your Deck, whose total Levels equal 9, but their effects are negated, also, until the end of your next turn after this effect resolves, you cannot Special Summon monsters, except Warrior monsters.You can only activate 1 \"Horn of Olifant\" per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Deep Dark Trap Hole",
+        "rarity": "N",
+        "id": 64,
+        "fn": "Deep_Dark Trap Hole",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/71/DeepDarkTrapHole-MAZE-EN-R-1E.png/revision/latest/?cb=20230317012101",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "When a Level 5 or higher Effect Monster(s) is Special Summoned: Banish that Level 5 or higher Effect Monster(s)."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Time-Space Trap Hole",
+        "rarity": "N",
+        "id": 65,
+        "fn": "Time-Space_Trap Hole",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/c6/TimeSpaceTrapHole-PGL3-EN-GScR-1E.png/revision/latest/?cb=20160318214914",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "When your opponent Special Summons a monster(s) from the hand or Extra Deck: Shuffle that monster(s) into the Deck, then you lose 1000 LP for each returned monster."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Chirubimé, Princess of Autumn Leaves",
+        "rarity": "R",
+        "id": 66,
+        "fn": "Chirubimé,_Princess of Autumn Leaves",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/4/4b/Chirubim%C3%A9PrincessofAutumnLeaves-MP14-EN-SR-1E.png/revision/latest/?cb=20140908004759",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 8,
+        "stats": [
+            1800,
+            2800
+        ],
+        "description": "Your opponent cannot target face-up Plant-Type monsters for attacks, except this one. If this card in your possession is sent to your Graveyard by your opponent's card (either by battle or by card effect): You can Special Summon 1 Plant-Type monster from your Deck, except \"Chirubimé, Princess of Autumn Leaves\"."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Cactus Fighter",
+        "rarity": "R",
+        "id": 67,
+        "fn": "Cactus_Fighter",
+        "img": "?cb=20081106222559",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1900,
+            400
+        ],
+        "description": "If this card destroys an opponent's monster by battle, Special Summon 1 \"Needle Token\" (Plant/EARTH/Level 1/ATK 500/DEF 500) to your opponent's side of the field in Defense Position."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Alpacaribou, Mystical Beast of the Forest",
+        "rarity": "R",
+        "id": 68,
+        "fn": "Alpacaribou,_Mystical Beast of the Forest",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/a/a1/AlpacaribouMysticalBeastoftheForest-MP14-EN-C-1E.png/revision/latest/?cb=20140908010434",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Beast ",
+            " Effect"
+        ],
+        "level": 7,
+        "stats": [
+            2700,
+            2100
+        ],
+        "description": "● While in Attack Position: Attack Position Winged Beast, Insect and Plant-Type monsters you control cannot be destroyed by battle.● While in Defense Position: Defense Position Winged Beast, Insect and Plant-Type monsters you control cannot be targeted by, or be destroyed by, card effects."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Flowerbot",
+        "rarity": "R",
+        "id": 69,
+        "fn": "Flowerbot",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/54/Flowerbot-WSUP-EN-SR-1E.png/revision/latest/?cb=20150412011721",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Plant ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            1500,
+            800
+        ],
+        "description": "If this card is sent to the Graveyard: Draw 1 card, then place 1 card from your hand on the top of the Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Little Trooper",
+        "rarity": "R",
+        "id": 70,
+        "fn": "Little_Trooper",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/cb/LittleTrooper-REDU-EN-C-UE.png/revision/latest/?cb=20120928190942",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 1,
+        "stats": [
+            900,
+            500
+        ],
+        "description": "If this card is destroyed by battle: You can Special Summon 1 Level 2 or lower Warrior-Type monster from your Deck in face-down Defense Position."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Spiritual Forest",
+        "rarity": "R",
+        "id": 71,
+        "fn": "Spiritual_Forest",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/1/1b/SpiritualForest-AP05-EN-C-UE.png/revision/latest/?cb=20140821171611",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "Each turn, the first face-up Beast, Beast-Warrior, or Plant-Type monster you control that would be destroyed by battle, is not destroyed."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "The Sanctum of Parshath",
+        "rarity": "R",
+        "id": 72,
+        "fn": "The_Sanctum of Parshath",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/7/74/TheSanctumofParshath-GFP2-EN-UR-1E.png/revision/latest/?cb=20220609050158",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "This card's name becomes \"The Sanctuary in the Sky\" while on the field or in the GY. Fairy monsters on the field gain 300 ATK/DEF. Set Spells/Traps cannot be destroyed by card effects, also neither player can target them with card effects. Once per turn: You can target a total of 3 Fairy monsters and/or Counter Traps with different names in your GY; place them on top of your Deck in any order.",
+        "stats": []
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Naturia Sacred Tree",
+        "rarity": "R",
+        "id": 73,
+        "fn": "Naturia_Sacred Tree",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/1/1f/NaturiaSacredTree-SDBT-EN-C-1E.png/revision/latest/?cb=20230505010812",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "If this card is sent to the GY: Add 1 \"Naturia\" card from your Deck to your hand, except \"Naturia Sacred Tree\". You can only use 1 of the following effects of \"Naturia Sacred Tree\" per turn, and only once that turn.● You can Tribute 1 EARTH Insect monster; Special Summon 1 Level 4 or lower EARTH Plant monster from your Deck.● You can Tribute 1 EARTH Plant monster; Special Summon 1 Level 4 or lower EARTH Insect monster from your Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Success Probability 0%",
+        "rarity": "R",
+        "id": 74,
+        "fn": "Success_Probability 0%"
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Graceful Revival",
+        "rarity": "R",
+        "id": 75,
+        "fn": "Graceful_Revival",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/d/de/GracefulRevival-LC5D-EN-C-1E.png/revision/latest/?cb=20141026141750",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "Activate this card by targeting 1 Level 2 or lower monster in your Graveyard; Special Summon that target in Attack Position. When this card leaves the field, destroy that monster. When that monster leaves the field, destroy this card."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Spirit Force",
+        "rarity": "R",
+        "id": 76,
+        "fn": "Spirit_Force",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/8/8f/SpiritForce-LC5D-EN-C-1E.png/revision/latest/?cb=20141026141837",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "During your opponent's turn, at damage calculation: Make the battle damage you take from this battle 0, then you can add 1 Warrior-Type Tuner monster with 1500 or less DEF from your Graveyard to your hand."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Shinobi Insect Hagakuremino",
+        "rarity": "N",
+        "id": 77,
+        "fn": "Shinobi_Insect Hagakuremino",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/f/fb/ShinobiInsectHagakuremino-MP22-EN-C-1E.png/revision/latest/?cb=20230416010418",
+        "type": "Monster",
+        "attibute": "WIND",
+        "types": [
+            "Insect ",
+            " Link ",
+            " Effect"
+        ],
+        "link_arrows": "Top-Left , Bottom",
+        "stats": [
+            1000,
+            2
+        ],
+        "description": "2 monsters with different namesWhile this card points to a monster(s), your opponent's monsters cannot target this card for attacks. If a monster(s) this card points to is destroyed by battle or card effects: You can Special Summon 1 Level 4 or lower Insect monster from your hand or GY, but banish it when it leaves the field. You can only use this effect of \"Shinobi Insect Hagakuremino\" once per turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Noble Knight Iyvanne",
+        "rarity": "N",
+        "id": 78,
+        "fn": "Noble_Knight Iyvanne",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/5/5f/NobleKnightIyvanne-SOFU-EN-SR-1E.png/revision/latest/?cb=20181018180700",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Warrior ",
+            " Effect"
+        ],
+        "level": 4,
+        "stats": [
+            1700,
+            1600
+        ],
+        "description": "If a \"Noble Arms\" Equip Spell becomes equipped to this card: You can Special Summon 1 \"Noble Knight Token\" (Warrior/LIGHT/Level 4/ATK 1000/DEF 1000), also you cannot Special Summon monsters for the rest of this turn, except \"Noble Knight\" monsters. You can only use this effect of \"Noble Knight Iyvanne\" once per turn. While this card is equipped with a \"Noble Arms\" Equip Spell, all other \"Noble Knight\" monsters you control gain 500 ATK."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Legendary Jujitsu Master",
+        "rarity": "N",
+        "id": 79,
+        "fn": "Legendary_Jujitsu Master",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/2/20/LegendaryJujitsuMaster-BPW2-NA-SR-1E.png/revision/latest/?cb=20140120112657",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Rock ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            1300,
+            1800
+        ],
+        "description": "If this Defense Position card battled a monster, at the end of the Damage Step: Place that monster on the top of the Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Iris, the Earth Mother",
+        "rarity": "N",
+        "id": 80,
+        "fn": "Iris,_the Earth Mother",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/c7/IristheEarthMother-CDIP-EN-R-1E.jpg/revision/latest/?cb=20070219022031",
+        "type": "Monster",
+        "attibute": "LIGHT",
+        "types": [
+            "Fairy ",
+            " Effect"
+        ],
+        "level": 6,
+        "stats": [
+            2400,
+            1200
+        ],
+        "description": "After a Chain with 3 or more Links resolves, draw 1 card. This effect cannot activate if multiple cards/effects with the same name were activated in that Chain."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Mysterious Guard",
+        "rarity": "N",
+        "id": 81,
+        "fn": "Mysterious_Guard",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/3/33/MysteriousGuard-BP01-EN-C-1E.png/revision/latest/?cb=20120616114025",
+        "type": "Monster",
+        "attibute": "EARTH",
+        "types": [
+            "Spellcaster ",
+            " Effect"
+        ],
+        "level": 3,
+        "stats": [
+            800,
+            1200
+        ],
+        "description": "FLIP: Target 1 face-up monster on the field, and if you control a face-up Warrior-Type monster, you can target 1 additional face-up monster on the field; return the first target to the top of the Deck, then return the additional target (if any) to the hand if you still control a face-up Warrior-Type monster."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Seed Cannon",
+        "rarity": "N",
+        "id": 82,
+        "fn": "Seed_Cannon",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e7/SeedCannon-CRMS-EN-C-1E.png/revision/latest/?cb=20090715023654",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "Each time a Plant-Type monster(s) is Summoned, place 1 Plant Counter on this card (max. 5). You can send this card to the Graveyard to inflict 500 damage to your opponent for each Plant Counter on it."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Insect Neglect",
+        "rarity": "N",
+        "id": 83,
+        "fn": "Insect_Neglect",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/d/de/InsectNeglect-SOVR-EN-C-1E.jpg/revision/latest/?cb=20091108211427",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "When your opponent's monster declares an attack: You can banish 1 Insect monster from your GY; negate the attack."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Morale Boost",
+        "rarity": "N",
+        "id": 84,
+        "fn": "Morale_Boost",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/9/98/MoraleBoost-DR1-EN-C-UE.png/revision/latest/?cb=20131213143659",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "Each time a player equips an Equip Spell Card, increase the Life Points of the controller of that Equip Spell Card by 1000 points. Each time an Equip Spell Card is removed from the field, the controller of that Equip Spell Card takes 1000 points of damage."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Out of the Blue",
+        "rarity": "N",
+        "id": 85,
+        "fn": "Out_of the Blue",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/0/06/OutoftheBlue-EXVC-EN-C-1E.jpg/revision/latest/?cb=20110510182755",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "Destroy this card if your opponent activates a card or effect that targets a card(s) in the Graveyard. When this card is destroyed by this effect and sent to the Graveyard, your opponent shuffles all cards in their Graveyard into the Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Link Restart",
+        "rarity": "N",
+        "id": 86,
+        "fn": "Link_Restart",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/c0/LinkRestart-MP18-EN-C-1E.png/revision/latest/?cb=20180901010003",
+        "type": "Trap",
+        "types": "Counter",
+        "description": "When a Spell/Trap Card, or monster effect, is activated that would inflict damage to you: Negate the activation, and if you do, Special Summon 1 Link Monster from your GY."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Blossom Bombardment",
+        "rarity": "N",
+        "id": 87,
+        "fn": "Blossom_Bombardment",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e5/BlossomBombardment-LC5D-EN-C-1E.png/revision/latest/?cb=20141027134417",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "When a Plant-Type monster you control destroys an opponent's monster by battle and sends it to the Graveyard: Inflict damage to your opponent equal to the destroyed monster's ATK in the Graveyard."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Graceful Tear",
+        "rarity": "N",
+        "id": 88,
+        "fn": "Graceful_Tear",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/2/2d/GracefulTear-MP17-EN-C-1E.png/revision/latest/?cb=20170823081008",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "Add 1 card from your hand to your opponent's hand, then gain 2000 LP."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Life Absorbing Machine",
+        "rarity": "N",
+        "id": 89,
+        "fn": "Life_Absorbing Machine",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e5/LifeAbsorbingMachine-CP07-EN-C-UE.png/revision/latest/?cb=20081114035430",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "During your Standby Phase, gain Life Points equal to half of the total Life Points you paid during your last turn."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Out of the Blue",
+        "rarity": "N",
+        "id": 85,
+        "fn": "Out_of the Blue",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/0/06/OutoftheBlue-EXVC-EN-C-1E.jpg/revision/latest/?cb=20110510182755",
+        "type": "Spell",
+        "types": "Continuous",
+        "description": "Destroy this card if your opponent activates a card or effect that targets a card(s) in the Graveyard. When this card is destroyed by this effect and sent to the Graveyard, your opponent shuffles all cards in their Graveyard into the Deck."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Link Restart",
+        "rarity": "N",
+        "id": 86,
+        "fn": "Link_Restart",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/c/c0/LinkRestart-MP18-EN-C-1E.png/revision/latest/?cb=20180901010003",
+        "type": "Trap",
+        "types": "Counter",
+        "description": "When a Spell/Trap Card, or monster effect, is activated that would inflict damage to you: Negate the activation, and if you do, Special Summon 1 Link Monster from your GY."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Blossom Bombardment",
+        "rarity": "N",
+        "id": 87,
+        "fn": "Blossom_Bombardment",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e5/BlossomBombardment-LC5D-EN-C-1E.png/revision/latest/?cb=20141027134417",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "When a Plant-Type monster you control destroys an opponent's monster by battle and sends it to the Graveyard: Inflict damage to your opponent equal to the destroyed monster's ATK in the Graveyard."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Graceful Tear",
+        "rarity": "N",
+        "id": 88,
+        "fn": "Graceful_Tear",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/2/2d/GracefulTear-MP17-EN-C-1E.png/revision/latest/?cb=20170823081008",
+        "type": "Trap",
+        "types": "Normal",
+        "description": "Add 1 card from your hand to your opponent's hand, then gain 2000 LP."
+    },
+    {
+        "pack": "Borrelsword Slash",
+        "name": "Life Absorbing Machine",
+        "rarity": "N",
+        "id": 89,
+        "fn": "Life_Absorbing Machine",
+        "img": "https://static.wikia.nocookie.net/yugioh/images/e/e5/LifeAbsorbingMachine-CP07-EN-C-UE.png/revision/latest/?cb=20081114035430",
+        "type": "Trap",
+        "types": "Continuous",
+        "description": "During your Standby Phase, gain Life Points equal to half of the total Life Points you paid during your last turn."
+    }
+]

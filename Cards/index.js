@@ -10,6 +10,7 @@ const sections = [];
 const expess = require("express");
 const app = expess();
 const path = require("path");
+const { exit } = require("process");
 
 
 
@@ -26,13 +27,13 @@ let br = 0;
     try {
         fs.mkdirSync(MainFolder)
     } catch (error) {
-        
+
     }
 
     try {
         fs.mkdirSync(MainFolderImgs)
     } catch (error) {
-        
+
     }
 
     try {
@@ -135,11 +136,11 @@ const GET_CARD_IMG = async(card, toSave) => {
     const res = (await (axios.get(url))).data
 
 
-    try {
-        fs.mkdirSync(toSave + card + "/")
-    } catch (error) {
+    // try {
+    //     fs.mkdirSync(toSave + card + "/")
+    // } catch (error) {
 
-    }
+    // }
 
 
 
@@ -183,7 +184,6 @@ const GET_CARD_IMG = async(card, toSave) => {
 
 
                 const output = toSave + card + "/" + card + "_" + i + ".png";
-                await downloadImage(url, output);
 
             }
 
@@ -211,10 +211,15 @@ async function downloadImage(url, outputPath) {
         fs.writeFileSync(outputPath, response.data);
         console.log('Imagen descargada y guardada en', outputPath);
     } catch (error) {
-        console.error('Error al descargar o guardar la imagen:', error);
+        if (error.errors != undefined) {
+            console.error('Error al descargar o guardar la imagen:', error.errors[0].errno);
+        } else {
+            console.error('Error al descargar o guardar la imagen:', error);
+
+        }
+
     }
 }
-
 
 const getCards = async(pack) => {
     const BASE = "https://www.konami.com/yugioh/duel_links/en/box/";
@@ -227,37 +232,265 @@ const getCards = async(pack) => {
     const dom = stringTOhtml(resp).window.document;
     let content = dom.querySelectorAll("li");
 
-    const cards = [];
+    // const cards = [];
 
     // content.length
-    
-    
-    for (let i =0; i <content.length; i++) {
+
+
+    // for (let i =0; i <content.length; i++) {
+    //     const card = content[i];
+    //     const card_data = {};
+    //     card_data["name"] = card.querySelector("dt").textContent.replaceAll('"""', '"');
+    //     card_data["name"] =   (card_data["name"].replaceAll(" The ", " the ")).replaceAll(" Of ", " of ")
+    //     card_data["rarity"] = Array.from(card.querySelector("a").classList).filter(cl => cl.includes("rare"))[0].replace("rare-", "").toUpperCase();
+    //     // card_data["description"] = await get_card_description(card_data["name"])
+    //     const moredata = await get_card_description(card_data["name"] );
+    //     card_data["fn"] = (card_data["name"].replaceAll('"', "")).replace(" ", "_");
+    //     cards.push({...card_data, ...moredata})
+    // }
+
+    // for (let i = 0; i < cards.length; i++) {
+    //     const ci = cards[i] ;
+    //     try {
+    //         downloadImage(ci.img, Cards + ci.fn + ".png")
+    //     } catch (error) {
+    //         console.log(error);
+
+    //     }
+
+    // }
+
+    // fs.writeFileSync(MainFolderImgs + "manifiest.json", JSON.stringify(cards))
+
+    const card_manifiest_name = "manifiest.cards.json";
+    const pack_manifiest_name = "manifiest.packs.json";
+
+
+
+
+    const max = content.length - 1;
+    let i = 0;
+
+    let card_manifiest
+    try {
+        card_manifiest = JSON.parse(fs.readFileSync(MainFolder + card_manifiest_name).toString());
+    } catch (error) {
+        card_manifiest = [];
+    }
+
+    let pack_manifiest
+    try {
+        pack_manifiest = JSON.parse(fs.readFileSync(MainFolder + pack_manifiest_name).toString());
+    } catch (error) {
+        pack_manifiest = [];
+    }
+
+
+
+    const getCard = async(i = 0) => {
+
+
+
+
         const card = content[i];
         const card_data = {};
+
+
+        card_data["pack"] = pack.alt
+
         card_data["name"] = card.querySelector("dt").textContent.replaceAll('"""', '"');
-        card_data["name"] =   (card_data["name"].replaceAll(" The ", " the ")).replaceAll(" Of ", " of ")
+        console.log(i + "-WORKING IN " + card_data["name"]);
+        card_data["name"] = (card_data["name"].replaceAll(" The ", " the ")).replaceAll(" Of ", " of ")
         card_data["rarity"] = Array.from(card.querySelector("a").classList).filter(cl => cl.includes("rare"))[0].replace("rare-", "").toUpperCase();
         // card_data["description"] = await get_card_description(card_data["name"])
-        const moredata = await get_card_description(card_data["name"] );
-        card_data["fn"] = (card_data["name"].replaceAll('"', "")).replace(" ", "_");
-        cards.push({...card_data, ...moredata})
+
+
+        let cards_img = 0;
+        if (card_manifiest.findIndex(c => c.name == card_data["name"]) == -1) {
+
+            card_data["id"] = (card_manifiest[card_manifiest.length - 1]) ? (card_manifiest[card_manifiest.length - 1].id + 1) : (0);
+            const moredata = await get_card_description(card_data["name"]);
+            card_data["fn"] = (card_data["name"].replaceAll('"', "")).replace(" ", "_");
+            card_manifiest.push({...card_data, ...moredata })
+            card_data["img"] = "";
+            cards_img = await GET_CARD_IMG(card_data["name"], Cards);
+
+
+
+            let j = 0;
+            let interval_int = setInterval(() => {
+
+                try {
+                    downloadImage(cards_img[j], Cards + card_data.fn + "_" + j + ".png")
+                    j++
+                    if (j == cards_img.length - 1) {
+                        clearInterval(interval_int)
+                    }
+
+                } catch (error) {
+                    console.log(error);
+
+                }
+            }, 800);;
+
+        } else {
+            console.log(i + "-END IN " + card_data["name"]);
+        }
+
+        if (content[i + 1] != undefined) {
+            setTimeout(() => {
+                console.log(i + "-END IN " + card_data["name"]);
+                getCard(i + 1)
+            }, (cards_img.length + 2) * .8 * 1000);
+        } else {
+            fs.writeFileSync(MainFolder + card_manifiest_name, JSON.stringify(card_manifiest))
+            console.log("DONE");
+            exit()
+        }
+
     }
 
-    for (let i = 0; i < cards.length; i++) {
-        const ci = cards[i] ;
-        try {
-            downloadImage(ci.img, Cards + ci.fn + ".png")
-        } catch (error) {
-            console.log(error);
-            
+
+
+
+    const getManifiestTxt = () => {
+        let txt = "";
+        for (let i = 0; i < content.length; i++) {
+            txt += `${i}-` + content[i].querySelector("dt").textContent.replaceAll('"""', '"') + "\n"
         }
-        
+        fs.writeFileSync(MainFolder + "cards.txt", txt)
+        console.log("END");
+        exit()
     }
-    
-    fs.writeFileSync(MainFolderImgs + "manifiest.json", JSON.stringify(cards))
+
+
+    const dowload_Pack_IMG = async() => {
+        const pack_imgs = await GET_CARD_IMG(pack.alt + " BOX BANNER HD");
+        let j = 0;
+        if (pack_manifiest.findIndex(p => p.name == pack.alt) == -1) {
+            let interval_int = setInterval(() => {
+                try {
+
+                    downloadImage(pack_imgs[j], Cards + pack.alt + "_BOX_" + j + ".png")
+                    j++
+
+                    if (j == pack_imgs.length - 1) {
+                        clearInterval(interval_int)
+                        pack_manifiest.push({
+                            name: pack.alt,
+                            ["id"]: (pack_manifiest[pack_manifiest.length - 1]) ? (pack_manifiest[pack_manifiest.length - 1].id + 1) : (0),
+                            img: "",
+                        })
+                        fs.writeFileSync(MainFolder + pack_manifiest_name, JSON.stringify(pack_manifiest))
+                        console.log("DONE");
+                        exit()
+                    }
+
+                } catch (error) {
+                    console.log(error);
+
+                }
+            }, 1500);;
+        } else {
+            fs.writeFileSync(MainFolder + pack_manifiest_name, JSON.stringify(pack_manifiest))
+            console.log("DONE");
+            exit()
+        }
+
+
+    }
+
+
+
+    const args = process.argv.slice(2);
+
+    // args[0] será el primer parámetro después de 'node index.js'
+    const param = args[0];
+
+    console.log("Loading mode: -" + param);
+
+    switch (param) {
+        case "card":
+            getCard(i);
+            break;
+
+        case "man":
+            getManifiestTxt()
+            break;
+        case "pack":
+            dowload_Pack_IMG()
+            break;
+
+        default:
+            break;
+    }
+
+    // DOWLOAD AND PREPARE CARDS
+
+    // getCard(i);
+
+    // DOWLOAD AND PREPARE PACKS
+    // dowload_Pack_IMG()
+
+    // DOWLOAD AND PREPARE A MANIFIEST WITH THE INDEX AND THE NAME OF THE CARDS
+    // getManifiestTxt()
+
+
 
 }
+
+// getCard(i)
+
+// getManifiestTxt()
+
+
+// const interval = setInterval(() => {
+
+
+
+
+//     (async() => {
+//         const card = content[i];
+//         const card_data = {};
+//         card_data["name"] = card.querySelector("dt").textContent.replaceAll('"""', '"');
+//         console.log("WORKING IN " + card_data["name"]);
+//         card_data["name"] = (card_data["name"].replaceAll(" The ", " the ")).replaceAll(" Of ", " of ")
+//         card_data["rarity"] = Array.from(card.querySelector("a").classList).filter(cl => cl.includes("rare"))[0].replace("rare-", "").toUpperCase();
+//         // card_data["description"] = await get_card_description(card_data["name"])
+//         const moredata = await get_card_description(card_data["name"]);
+//         card_data["fn"] = (card_data["name"].replaceAll('"', "")).replace(" ", "_");
+//         cards.push({...card_data, ...moredata })
+//         const cards_img = await GET_CARD_IMG(card_data["name"], Cards);
+//         let j = 0;
+//         let interval_int = setInterval(() => {
+//             try {
+//                 downloadImage(cards_img[j], Cards + card_data.fn + "_" + j + ".png")
+//                 j++
+//                 if (j == cards_img.length - 1 ) {
+//                     clearInterval(interval)
+//                 }
+
+//             } catch (error) {
+//                 console.log(error.status);
+
+//             }
+//         }, 1000);;
+//         // try {
+//         //     downloadImage(card_data.img, Cards + card_data.fn + ".png")
+//         // } catch (error) {
+//         //     console.log(error);
+//         // }
+//         console.log("FINISHED " + card_data["name"]);
+
+
+
+//         i++
+//         if (i == max) {
+//             clearInterval(interval)
+//         }
+
+//     })()
+// }, 8000);
 
 
 
@@ -291,16 +524,16 @@ const get_card_description = async(cardName) => {
     try {
         const response = (await axios.get(base)).data;
         // let text = response.slice(response.indexOf('<table class="cardtable">'));
-    
+
         const dom = stringTOhtml(response).window.document;
         let cardImage = dom.getElementsByClassName("cardtable-cardimage")[0].querySelector("img").src;
-        cardImage = cardImage.replace(cardImage.substring(cardImage.indexOf("scale-to-width-down") ,cardImage.indexOf("?")  ), "");
-        
-  
-        
+        cardImage = cardImage.replace(cardImage.substring(cardImage.indexOf("scale-to-width-down"), cardImage.indexOf("?")), "");
+
+
+
         const rows = dom.getElementsByClassName("cardtablerow");
         const cardData = {
-            img : cardImage
+            img: cardImage
         };
         let toSearch = ["Card type", 'Property', 'English', "Attribute",
             "Types",
@@ -313,28 +546,28 @@ const get_card_description = async(cardName) => {
         let rows_usefull = [];
         for (let i = 1; i < rows.length; i++) {
             const row = rows[i];
-    
-    
+
+
             for (let j = 0; j < toSearch.length; j++) {
                 if (row.outerHTML.includes(toSearch[j])) {
                     rows_usefull.push([row, toSearch[j]])
                     break;
                 }
-    
+
             }
-    
+
         }
-    
-    
-    
-    
-    
+
+
+
+
+
         for (let i = 0; i < rows_usefull.length; i++) {
             let row = rows_usefull[i][0].textContent;
-    
+
             if (row.includes("English") && !row.includes("TCG sets")) {
-    
-    
+
+
                 const lang_break = [
                     "French",
                     "German",
@@ -343,9 +576,9 @@ const get_card_description = async(cardName) => {
                     "Spanish",
                     "Japanese",
                     "Korean",
-    
+
                 ]
-    
+
                 const indexs = [row.indexOf("English"), (() => {
                     let end_index = -1;
                     for (let k = 0; k < lang_break.length; k++) {
@@ -354,98 +587,98 @@ const get_card_description = async(cardName) => {
                             end_index -= lang_break[k].length
                             break
                         }
-    
+
                     }
                     return end_index
                 })()];
-    
-    
-    
+
+
+
                 if (!cardData["description"]) {
                     cardData["description"] = row.slice(indexs[0], indexs[1]).replace("English", "").trim();
                 }
-    
+
             } else if (!row.includes("TCG sets")) {
                 switch (rows_usefull[i][1]) {
                     case "Card type":
                         cardData["type"] = row.replace("Card type", "").trim();
                         break;
-    
-    
+
+
                     case "Property":
                         cardData["types"] = row.replace("Property", "").trim();
                         break;
                     case "Pendulum Scale":
                         cardData["pendulum_scale"] = parseInt(row.replace("Pendulum Scale", "").trim());
                         break;
-    
-    
+
+
                     case "Attribute":
-                    if(cardData["attibute"] == undefined){
-                        cardData["attibute"] = row.replace("Attribute", "").trim();
-                    }
+                        if (cardData["attibute"] == undefined) {
+                            cardData["attibute"] = row.replace("Attribute", "").trim();
+                        }
                         break;
-    
-    
+
+
                     case "Types":
                         cardData["types"] = (row.replace("Types", "").trim()).split("/");
                         break;
-    
-                        case "Rank":
+
+                    case "Rank":
                     case "Level":
-                       if(cardData["level"] == undefined && !row.includes("Materials")){
-                 
-                        
-                        cardData["level"] = parseInt(row.replace(/\D/g, ""));
-                       }
+                        if (cardData["level"] == undefined && !row.includes("Materials")) {
+
+
+                            cardData["level"] = parseInt(row.replace(/\D/g, ""));
+                        }
                         break;
-    
+
                     case "ATK":
-                    if(cardData["stats"] == undefined){
-                        cardData["stats"] = ((row.replace("ATK", "").trim()).split("/").map(val => {
-                            val = val.replace(/\D/g, "");
-                            return parseInt(val)
-                        })).filter(val => !isNaN(val));
-                    }
+                        if (cardData["stats"] == undefined) {
+                            cardData["stats"] = ((row.replace("ATK", "").trim()).split("/").map(val => {
+                                val = val.replace(/\D/g, "");
+                                return parseInt(val)
+                            })).filter(val => !isNaN(val));
+                        }
                         break;
-    
-    
+
+
                     case "Link Arrows":
                         cardData["link_arrows"] = row.replace("Link Arrows", "").trim();
                         break;
-    
+
                 }
-    
-    
-    
-    
+
+
+
+
             }
-    
-    
-    
-    
+
+
+
+
         }
-    
-    
-    
+
+
+
         return cardData
-    
+
     } catch (error) {
 
-console.log(error);
+        console.log(error);
 
         return {}
         // console.log(cardName);
         // if(error.response.status != 404){
-   
-            
+
+
         //     console.log(error);
-            
+
         // }
 
-        
-        
-           
+
+
+
     }
 
 
@@ -483,4 +716,4 @@ app.listen(3000, () => {
 
 
 
-getCards(manifiest["main_box"][0])
+getCards(manifiest["main_box"][1])
